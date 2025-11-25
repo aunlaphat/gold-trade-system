@@ -27,8 +27,8 @@ const isTokenExpired = (token: string): boolean => {
 interface AuthContextType {
   user: User | null
   isLoading: boolean
-  login: (username: string, password: string) => Promise<{ success: boolean; error?: string }>
-  register: (email: string, username: string, password: string) => Promise<{ success: boolean; error?: string }>
+  login: (email: string, password: string) => Promise<{ success: boolean; error?: string; field?: string }>
+  register: (email: string, username: string, password: string) => Promise<{ success: boolean; error?: string; field?: string }>
   logout: () => void
 }
 
@@ -53,26 +53,26 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(false)
   }, [])
 
-  const login = async (username: string, password: string) => {
+  const login = async (email: string, password: string): Promise<{ success: boolean; error?: string; field?: string }> => {
     try {
-      const response = await apiClient.login(username, password)
+      const response = await apiClient.login(email, password)
       setUser(response.user)
       localStorage.setItem("user", JSON.stringify(response.user))
       return { success: true }
     } catch (error: any) {
       console.error("Login failed:", error)
       logout()
-      return { success: false, error: error.message || "Login failed" }
+      return { success: false, error: error.details || error.message || "Login failed", field: error.field }
     }
   }
 
-  const register = async (email: string, username: string, password: string) => {
+  const register = async (email: string, username: string, password: string): Promise<{ success: boolean; error?: string; field?: string }> => {
     try {
       await apiClient.register(email, username, password)
       return { success: true }
     } catch (error: any) {
       console.error("Registration failed:", error)
-      return { success: false, error: error.message || "Registration failed" }
+      return { success: false, error: error.details || error.message || "Registration failed", field: error.field }
     }
   }
 

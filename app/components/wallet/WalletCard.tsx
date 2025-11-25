@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/card"
 import { Button } from "@/app/components/ui/button"
-import { Wallet, Plus, Minus, Repeat2 } from "lucide-react"
+import { Wallet, Plus, Minus, Repeat2, Banknote, DollarSign } from "lucide-react"
 
 interface WalletCardProps {
   balance: {
@@ -88,24 +88,18 @@ export function WalletCard({
 
     // THB value: ถ้า base = THB ก็ใช้ได้เลย ไม่ต้องพึ่ง exchangeRates
     // ถ้า base = USD และไม่มี exchangeRates จะคืนค่า null
-    const thbValue =
-      baseCurrency === "THB"
-        ? valueInBase
-        : convertToTHB(valueInBase, "USD")
+    const thbValue = baseCurrency === "THB" ? valueInBase : convertToTHB(valueInBase, "USD")
 
     // USD value: ถ้า base = USD ก็ใช้ได้เลย ไม่ต้องแปลง
     // ถ้า base = THB และไม่มี exchangeRates จะคืนค่า null
-    const usdValue =
-      baseCurrency === "USD"
-        ? valueInBase
-        : convertToUSD(valueInBase, "THB")
+    const usdValue = baseCurrency === "USD" ? valueInBase : convertToUSD(valueInBase, "THB")
 
     return { thbValue, usdValue }
   }
 
   const calculatePnL = (
     goldType: string,
-    holding: number
+    holding: number,
   ): { pnlThb: number | null; pnlUsd: number | null; pnlPercent: number | null; hasAverage: boolean } => {
     if (holding === 0 || !currentMarketPrices) {
       return { pnlThb: 0, pnlUsd: 0, pnlPercent: 0, hasAverage: false }
@@ -127,8 +121,7 @@ export function WalletCard({
     const currentPriceInBase = currentSellPrice
 
     const pnlInBase = (currentPriceInBase - avgCostInBase) * holding
-    const pnlPercent =
-      ((currentPriceInBase - avgCostInBase) / avgCostInBase) * 100
+    const pnlPercent = ((currentPriceInBase - avgCostInBase) / avgCostInBase) * 100
 
     // แปลง P/L เป็น THB และ USD. ถ้า exchangeRates ไม่มี จะได้ null
     const pnlThb = convertToTHB(pnlInBase, baseCurrency)
@@ -144,169 +137,65 @@ export function WalletCard({
   ]
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Wallet className="h-5 w-5" />
-          Wallet
+    <Card className="border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
+      <CardHeader className="bg-gradient-to-r from-primary/10 to-accent/10 border-b border-primary/20">
+        <CardTitle className="flex items-center gap-3 text-primary">
+          <div className="p-2 rounded-lg bg-primary/20">
+            <Wallet className="h-6 w-6" />
+          </div>
+          <span className="text-xl">กระเป๋าเงิน</span>
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-6 pt-6">
         {/* Cash THB */}
-        <div>
-          <div className="text-sm text-muted-foreground mb-1">
-            Cash Balance (THB)
+        <div className="p-4 rounded-lg bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950/30 dark:to-emerald-900/30 border border-emerald-200 dark:border-emerald-800">
+          <div className="flex items-center gap-2 text-sm text-emerald-700 dark:text-emerald-400 mb-2">
+            <Banknote className="h-4 w-4" />
+            <span className="font-medium">ยอดเงินบาทไทย (THB)</span>
           </div>
-          <div className="text-3xl font-bold">
-            {balance.THB.toLocaleString("en-US", { minimumFractionDigits: 2 })}{" "}
-            <span className="text-lg text-muted-foreground">THB</span>
+          <div className="text-3xl font-bold text-emerald-700 dark:text-emerald-400">
+            ฿{balance.THB.toLocaleString("en-US", { minimumFractionDigits: 2 })}
           </div>
         </div>
 
         {/* Cash USD */}
-        <div>
-          <div className="text-sm text-muted-foreground mb-1">
-            Cash Balance (USD)
+        <div className="p-4 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 border border-blue-200 dark:border-blue-800">
+          <div className="flex items-center gap-2 text-sm text-blue-700 dark:text-blue-400 mb-2">
+            <DollarSign className="h-4 w-4" />
+            <span className="font-medium">ยอดเงินดอลลาร์ (USD)</span>
           </div>
-          <div className="text-3xl font-bold">
-            {balance.USD.toLocaleString("en-US", { minimumFractionDigits: 2 })}{" "}
-            <span className="text-lg text-muted-foreground">USD</span>
+          <div className="text-3xl font-bold text-blue-700 dark:text-blue-400">
+            ${balance.USD.toLocaleString("en-US", { minimumFractionDigits: 2 })}
           </div>
         </div>
 
         {/* Actions */}
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
           <Button
             onClick={onDeposit}
-            className="col-span-1 bg-emerald-600 hover:bg-emerald-700"
+            className="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 shadow-md hover:shadow-lg transition-all transition-all bg-transparent text-xs whitespace-nowrap flex items-center justify-center gap-1"
           >
             <Plus className="h-4 w-4 mr-2" />
-            Deposit
+            ฝาก
           </Button>
           <Button
             onClick={onWithdraw}
             variant="outline"
-            className="col-span-1 bg-transparent"
+            className="w-full border-amber-500/50 hover:bg-amber-500/10 hover:border-amber-500 transition-all bg-transparent transition-all bg-transparent text-xs whitespace-nowrap flex items-center justify-center gap-1"
           >
             <Minus className="h-4 w-4 mr-2" />
-            Withdraw
+            ถอน
           </Button>
           <Button
             onClick={onExchange}
             variant="outline"
-            className="col-span-1 bg-transparent"
+            className="w-full border-blue-500/50 hover:bg-blue-500/10 hover:border-blue-500 transition-all transition-all bg-transparent text-xs whitespace-nowrap flex items-center justify-center gap-1"
           >
             <Repeat2 className="h-4 w-4 mr-2" />
-            Exchange
+            แลกเปลี่ยน
           </Button>
         </div>
 
-        {/* Gold Holdings */}
-        <div className="pt-4 border-t space-y-3">
-          <div className="text-sm font-semibold">Gold Holdings</div>
-          <div className="space-y-2">
-            {tradableGoldTypes.map((gold) => {
-              const holding = goldHoldings[gold.type] || 0
-              if (holding <= 0) return null
-
-              const { thbValue, usdValue } = getGoldValue(gold.type, holding)
-              const { pnlThb, pnlUsd, pnlPercent, hasAverage } =
-                calculatePnL(gold.type, holding)
-
-              const pnlColorClass =
-                pnlPercent != null && pnlPercent > 0
-                  ? "text-emerald-500"
-                  : pnlPercent != null && pnlPercent < 0
-                  ? "text-red-500"
-                  : "text-gray-500"
-              const pnlSign = pnlPercent != null && pnlPercent > 0 ? "+" : ""
-
-              return (
-                <div
-                  key={gold.type}
-                  className="flex flex-col text-sm border-b pb-2 last:border-b-0 last:pb-0"
-                >
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">{gold.title}:</span>
-                    <span className="font-medium">
-                      {holding.toFixed(4)} {gold.unit}
-                    </span>
-                  </div>
-
-                  {/* Current Value */}
-                  <div className="flex justify-between text-xs text-gray-500">
-                    <span>Current Value:</span>
-                    <span>
-                      {thbValue != null
-                        ? thbValue.toLocaleString("en-US", {
-                            minimumFractionDigits: 2,
-                          })
-                        : "N/A"}{" "}
-                      THB /{" "}
-                      {usdValue != null
-                        ? usdValue.toLocaleString("en-US", {
-                            minimumFractionDigits: 2,
-                          })
-                        : "N/A"}{" "}
-                      USD
-                    </span>
-                  </div>
-
-                  {/* Average Cost per Unit */}
-                  <div className="flex justify-between text-xs text-gray-500">
-                    <span>Avg. Cost / {gold.unit}:</span>
-                    <span>
-                      {averageCosts?.[gold.type] != null
-                        ? averageCosts[gold.type]?.toLocaleString("en-US", {
-                            minimumFractionDigits: 2,
-                          })
-                        : "N/A"}{" "}
-                      THB
-                    </span>
-                  </div>
-
-                  {/* P/L */}
-                  <div className="flex justify-between text-xs text-gray-500">
-                    <span>P/L:</span>
-                    {/*
-                      ตามความต้องการ:
-                      - ถ้ามีข้อมูล (hasAverage เป็น true) → แสดงตัวเลข + %
-                      - ถ้าไม่มีข้อมูล (hasAverage เป็น false) → แสดง N/A (requires average cost)
-                      การใช้ hasAverage จาก calculatePnL ช่วยให้ควบคุมการแสดงผลได้ตามต้องการ
-                    */}
-                    {hasAverage && pnlThb != null && pnlUsd != null && pnlPercent != null ? (
-                      <span className={`font-medium ${pnlColorClass}`}>
-                        {pnlSign}
-                        {pnlThb.toLocaleString("en-US", {
-                          minimumFractionDigits: 2,
-                        })}{" "}
-                        THB /{" "}
-                        {pnlSign}
-                        {pnlUsd.toLocaleString("en-US", {
-                          minimumFractionDigits: 2,
-                        })}{" "}
-                        USD{" "}
-                        {`(${pnlSign}${pnlPercent.toFixed(2)}%)`}
-                      </span>
-                    ) : (
-                      <span className="text-gray-400">
-                        N/A (requires average cost)
-                      </span>
-                    )}
-                  </div>
-                </div>
-              )
-            })}
-
-            {tradableGoldTypes.every(
-              (gold) => (goldHoldings[gold.type] || 0) === 0
-            ) && (
-              <div className="text-sm text-muted-foreground">
-                No gold holdings.
-              </div>
-            )}
-          </div>
-        </div>
       </CardContent>
     </Card>
   )

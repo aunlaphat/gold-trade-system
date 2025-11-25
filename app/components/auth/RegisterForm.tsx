@@ -5,7 +5,7 @@ import { useState } from "react"
 import { useAuth } from "@/app/contexts/AuthContext"
 import { Button } from "@/app/components/ui/button"
 import { Input } from "@/app/components/ui/input"
-import { useToast } from "../ui/use-toast"
+import { useToast } from "@/app/components/ui/use-toast"
 import { Mail, Lock, User, Eye, EyeOff, AlertCircle } from "lucide-react"
 
 interface RegisterFormProps {
@@ -24,35 +24,38 @@ export function RegisterForm({ onRegisterSuccess }: RegisterFormProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault()
-  setEmailError("")
-  setUsernameError("")
-  setGeneralError("")
-  setIsLoading(true)
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setEmailError("")
+    setUsernameError("")
+    setGeneralError("")
+    setIsLoading(true)
 
-  const result = await register(email, username, password)
+    const result = await register(email, username, password)
 
-  if (result.success) {
-    toast({
-      title: "สร้างบัญชีสำเร็จ",
-      description: "กรุณาเข้าสู่ระบบเพื่อเริ่มใช้งาน",
-    })
-    onRegisterSuccess()
-  } else {
-    const errorMessage = result.error || "เกิดข้อผิดพลาดในการสร้างบัญชี"
-    setGeneralError(errorMessage)
-
-    toast({
-      title: "สร้างบัญชีไม่สำเร็จ",
-      description: errorMessage,
-      variant: "destructive",
-    })
+    if (result.success) {
+      toast({
+        title: "สร้างบัญชีสำเร็จ",
+        description: "กรุณาเข้าสู่ระบบเพื่อเริ่มใช้งาน",
+      })
+      onRegisterSuccess()
+    } else {
+      const errorMessage = result.error || "เกิดข้อผิดพลาดในการสร้างบัญชี"
+      if (result.field === "email") {
+        setEmailError(errorMessage)
+      } else if (result.field === "username") {
+        setUsernameError(errorMessage)
+      } else {
+        setGeneralError(errorMessage)
+        toast({
+          title: "สร้างบัญชีไม่สำเร็จ",
+          description: errorMessage,
+          variant: "destructive",
+        })
+      }
+    }
+    setIsLoading(false)
   }
-
-  setIsLoading(false)
-}
-
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">

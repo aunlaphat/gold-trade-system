@@ -1,14 +1,24 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Roboto, Noto_Sans_Thai } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { AuthProvider } from "@/app/contexts/AuthContext"
 import { Toaster } from "@/app/components/ui/toaster"
+import { ThemeProvider } from "@/app/components/ThemeProvider"
 import "./globals.css"
 import PriceProvider from "./components/PriceProvider"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const roboto = Roboto({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-roboto",
+})
+
+const notoSansThai = Noto_Sans_Thai({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["thai", "latin"],
+  variable: "--font-noto-sans-thai",
+})
 
 export const metadata: Metadata = {
   title: "Gold Trading System - Real-Time Trading",
@@ -16,32 +26,28 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/logo-gold-system.png",
+        url: "/logo-system.jpg",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/logo-gold-system.png",
+        url: "/logo-system.jpg",
         media: "(prefers-color-scheme: dark)",
       },
-      {
-        url: "/logo-gold-system.svg",
-        type: "image/svg+xml",
-      },
     ],
-    apple: "/logo-gold-system.png",
+    apple: "/logo-system.jpg",
   },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <AuthProvider>
-          <PriceProvider>
-            {children}
-          </PriceProvider>
-          <Toaster />
-        </AuthProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${roboto.variable} ${notoSansThai.variable} font-sans`}>
+        <ThemeProvider>
+          <AuthProvider>
+            <PriceProvider>{children}</PriceProvider>
+            <Toaster />
+          </AuthProvider>
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

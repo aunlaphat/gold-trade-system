@@ -2,7 +2,18 @@
 
 import { io, type Socket } from "socket.io-client"
 
-const WS_URL = process.env.NEXT_PUBLIC_API_URL
+const envBase = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "")
+let WS_URL = envBase
+
+// If no env var and in browser, fallback to localhost for development
+if (!WS_URL && typeof window !== "undefined") {
+  const host = window.location.hostname
+  if (host === "localhost" || host === "127.0.0.1") {
+    WS_URL = "http://localhost:5000"
+  } else {
+    WS_URL = "" // Same origin for production
+  }
+}
 
 let socket: Socket | null = null
 

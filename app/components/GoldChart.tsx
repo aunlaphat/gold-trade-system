@@ -1,7 +1,6 @@
-// components/trading/GoldChart.tsx
 "use client"
 
-import React, { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import "chartjs-adapter-date-fns"
 
 type ResolutionKey = "1m" | "5m" | "30m" | "1h" | "1d" | "1w"
@@ -47,18 +46,12 @@ const aggregateOHLC = (ticks: { t: Date; v: number }[], bucketSeconds: number) =
   return out
 }
 
-/**
- * ดึงค่าที่จะใช้ plot ตาม goldType
- * โยงตรงกับ payload ที่ GoldPriceService.updatePrices() เขียนลง Mongo:
- *   payload.gold9999, payload.gold965, payload.gold965_asso, payload.spot
- */
 function extractValueFromPayload(goldType: string, item: any): number | null {
   const payload = item?.payload
   if (!payload) {
     return typeof item.value === "number" ? item.value : null
   }
 
-  // ถ้า backend ใส่ value มาให้ตรง ๆ ก็ใช้ก่อนเลย
   if (typeof item.value === "number" && Number.isFinite(item.value)) {
     return item.value
   }
@@ -89,7 +82,6 @@ function extractValueFromPayload(goldType: string, item: any): number | null {
       return typeof v === "number" ? v : null
     }
     case "GOLD_965_ASSO": {
-      // 🔥 key ตาม backend: gold965_asso
       const g = payload.gold965_asso || payload["gold_965_asso"]
       if (!g) return null
       const v = g.price ?? g.buyIn ?? g.sellOut ?? null
@@ -107,9 +99,9 @@ function extractValueFromPayload(goldType: string, item: any): number | null {
 }
 
 interface GoldChartProps {
-  goldType: string;
-  title?: string;
-  status?: "ONLINE" | "PAUSE" | "STOP"; // Add status prop
+  goldType: string
+  title?: string
+  status?: "ONLINE" | "PAUSE" | "STOP"
 }
 
 export function GoldChart({ goldType, title, status = "ONLINE" }: GoldChartProps) {
@@ -126,7 +118,6 @@ export function GoldChart({ goldType, title, status = "ONLINE" }: GoldChartProps
     if (host === "localhost" || host === "127.0.0.1") apiBase = "http://localhost:5000"
   }
 
-  // ใช้แค่สำหรับประกอบ URL เท่านั้น
   const seriesPath = (() => {
     const map: Record<string, string> = {
       SPOT: "spot",
@@ -147,10 +138,7 @@ export function GoldChart({ goldType, title, status = "ONLINE" }: GoldChartProps
 
       try {
         const ChartModule = await import("chart.js")
-        const ChartCtor =
-          (ChartModule as any).Chart ||
-          (ChartModule as any).default ||
-          (window as any).Chart
+        const ChartCtor = (ChartModule as any).Chart || (ChartModule as any).default || (window as any).Chart
 
         const {
           LineController,
@@ -177,24 +165,14 @@ export function GoldChart({ goldType, title, status = "ONLINE" }: GoldChartProps
           CategoryScale,
           Title,
           Tooltip,
-          Legend
+          Legend,
         )
 
         let hasFinancial = false
         try {
           const fin = await import("chartjs-chart-financial")
-          const {
-            CandlestickController,
-            CandlestickElement,
-            OHLCController,
-            OHLCElement,
-          } = fin as any
-          ChartCtor.register?.(
-            CandlestickController,
-            CandlestickElement,
-            OHLCController,
-            OHLCElement
-          )
+          const { CandlestickController, CandlestickElement, OHLCController, OHLCElement } = fin as any
+          ChartCtor.register?.(CandlestickController, CandlestickElement, OHLCController, OHLCElement)
           hasFinancial = true
         } catch {
           hasFinancial = false
@@ -228,15 +206,9 @@ export function GoldChart({ goldType, title, status = "ONLINE" }: GoldChartProps
           .filter((x): x is { t: Date; v: number } => x.v != null)
           .map((x) => ({ t: x.t, v: x.v as number }))
 
-        console.debug(
-          `[GoldChart ${goldType}] ticks length:`,
-          ticks.length,
-          "raw length:",
-          raw.length
-        )
+        console.debug(`[GoldChart ${goldType}] ticks length:`, ticks.length, "raw length:", raw.length)
 
         if (ticks.length === 0) {
-          // ไม่มีค่าที่ตีความได้ → ไม่ต้องวาดอะไร
           setLoading(false)
           return
         }
@@ -288,12 +260,7 @@ export function GoldChart({ goldType, title, status = "ONLINE" }: GoldChartProps
               x: {
                 type: "time",
                 time: {
-                  unit:
-                    bucketSec >= 86400
-                      ? "day"
-                      : bucketSec >= 3600
-                      ? "hour"
-                      : "minute",
+                  unit: bucketSec >= 86400 ? "day" : bucketSec >= 3600 ? "hour" : "minute",
                 },
               },
               y: {
@@ -319,101 +286,84 @@ export function GoldChart({ goldType, title, status = "ONLINE" }: GoldChartProps
   }, [res, mode, goldType, seriesPath, apiBase])
 
   return (
-    <div
-      style={{
-        border: "1px solid #e5e7eb",
-        borderRadius: 8,
-        padding: 8,
-        background: "#fff",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          marginBottom: 6,
-          flexWrap: "wrap",
-          gap: 8,
-        }}
-      >
-        <div style={{ fontWeight: 600 }}>{title || goldType}</div>
-        <div
-          style={{
-            marginLeft: "auto",
-            display: "flex",
-            gap: 4,
-            flexWrap: "wrap",
-          }}
-        >
-          {/* Timeframe Selector */}
-          <select
-            value={res}
-            onChange={(e) => setRes(e.target.value as ResolutionKey)}
-            style={{
-              padding: "4px 8px",
-              border: "1px solid #d1d5db",
-              borderRadius: 4,
-              fontSize: 12,
-            }}
-          >
-            <option value="1m">1m</option>
-            <option value="5m">5m</option>
-            <option value="30m">30m</option>
-            <option value="1h">1h</option>
-            <option value="1d">1d</option>
-            <option value="1w">1w</option>
-          </select>
-          <button
-            onClick={() => setMode("line")}
-            style={{
-              padding: "4px 8px",
-              border: "1px solid #d1d5db",
-              borderRadius: 4,
-              fontSize: 12,
-              background: mode === "line" ? "#3b82f6" : "#fff",
-              color: mode === "line" ? "#fff" : "#000",
-            }}
-          >
-            Line
-          </button>
-          <button
-            onClick={() => setMode("candles")}
-            style={{
-              padding: "4px 8px",
-              border: "1px solid #d1d5db",
-              borderRadius: 4,
-              fontSize: 12,
-              background: mode === "candles" ? "#3b82f6" : "#fff",
-              color: mode === "candles" ? "#fff" : "#000",
-            }}
-          >
-            Candles
-          </button>
+    <div className="border border-border rounded-lg p-4 bg-card shadow-sm">
+      <div className="flex items-center justify-between mb-4 flex-wrap gap-4">
+        <div className="flex items-center gap-2">
+          <div className="w-1 h-6 bg-primary rounded-full"></div>
+          <h3 className="font-semibold text-lg text-foreground">{title || goldType}</h3>
+        </div>
+        <div className="flex gap-2 flex-wrap">
+          <div className="flex gap-1 p-1 bg-muted rounded-lg">
+            {(["1m", "5m", "30m", "1h", "1d", "1w"] as ResolutionKey[]).map((r) => (
+              <button
+                key={r}
+                onClick={() => setRes(r)}
+                className={`px-3 py-1.5 text-xs font-medium rounded transition-all ${
+                  res === r
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "hover:bg-background text-muted-foreground"
+                }`}
+              >
+                {r}
+              </button>
+            ))}
+          </div>
+          <div className="flex gap-1 p-1 bg-muted rounded-lg">
+            <button
+              onClick={() => setMode("line")}
+              className={`px-3 py-1.5 text-xs font-medium rounded transition-all ${
+                mode === "line"
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "hover:bg-background text-muted-foreground"
+              }`}
+            >
+              เส้น
+            </button>
+            <button
+              onClick={() => setMode("candles")}
+              className={`px-3 py-1.5 text-xs font-medium rounded transition-all ${
+                mode === "candles"
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "hover:bg-background text-muted-foreground"
+              }`}
+            >
+              เทียน
+            </button>
+          </div>
         </div>
       </div>
-      <div style={{ width: "100%", height: 400 }}>
+      <div className="w-full" style={{ height: 400 }}>
         <canvas ref={canvasRef} />
       </div>
-      <div
-        style={{
-          marginTop: 8,
-          fontSize: 12,
-          color: "#6b7280",
-        }}
-      >
-        {loading ? (
-          "loading..."
-        ) : status === "PAUSE" ? (
-          "Market Paused"
-        ) : status === "STOP" ? (
-          "Market Stopped"
-        ) : (
-          `${res} • ${mode}`
-        )}
+      <div className="mt-4 text-xs text-muted-foreground flex items-center justify-between">
+        <span>
+          {loading ? (
+            <span className="flex items-center gap-2">
+              <span className="w-3 h-3 border-2 border-primary border-t-transparent rounded-full animate-spin"></span>
+              กำลังโหลด...
+            </span>
+          ) : status === "PAUSE" ? (
+            "ตลาดพักชั่วคราว"
+          ) : status === "STOP" ? (
+            "ตลาดหยุดซื้อขาย"
+          ) : (
+            `${res} • ${mode === "candles" ? "เทียน" : "เส้น"}`
+          )}
+        </span>
+        <span
+          className={`px-2 py-1 rounded text-xs font-medium ${
+            status === "ONLINE"
+              ? "bg-emerald-500/20 text-emerald-600 dark:text-emerald-400"
+              : status === "PAUSE"
+                ? "bg-amber-500/20 text-amber-600 dark:text-amber-400"
+                : "bg-red-500/20 text-red-600 dark:text-red-400"
+          }`}
+        >
+          {status}
+        </span>
       </div>
     </div>
   )
 }
 
-// จะได้ import ได้สองแบบ
 export default GoldChart

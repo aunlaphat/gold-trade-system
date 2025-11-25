@@ -125,7 +125,7 @@ export function AdminPage() {
   }
 
   const allGoldTypes = [
-    { type: "SPOT",          title: "Gold Spot",              category: "reference", unit: "USD/oz" },
+    { type: "SPOT",          title: "Gold Spot (Global)",              category: "reference", unit: "USD/oz" },
     { type: "GOLD_9999",     title: "Gold 99.99% (Global)",   category: "reference", unit: "THB/g" },
     { type: "GOLD_965",      title: "Gold 96.5% (Global)",    category: "reference", unit: "THB/baht" },
     { type: "GOLD_9999_MTS", title: "Gold 99.99% (MTS)",      category: "tradable",  unit: "THB/g" },
@@ -230,14 +230,14 @@ export function AdminPage() {
       <main className="container mx-auto px-4 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Column: Price Cards and Charts (2/3 width) */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-4 sm:space-y-6">
             {/* Search Bar */}
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
                 type="text"
                 placeholder="Search gold types..."
-                className="w-full pl-10"
+                className="w-full pl-10 text-sm sm:text-base"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -246,10 +246,10 @@ export function AdminPage() {
             {/* Reference Group: Market Indices */}
             {filteredReferenceTypes.length > 0 && (
               <div className="space-y-2">
-                <h2 className="text-lg font-semibold text-muted-foreground">
+                <h2 className="text-base sm:text-lg font-semibold text-muted-foreground">
                   Market Indices (Reference Only)
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                   {filteredReferenceTypes.map((gold) => {
                     const p = gold.priceData
                     return (
@@ -273,8 +273,8 @@ export function AdminPage() {
             {/* Trading Group: Gold Partners */}
             {filteredTradingTypes.length > 0 && (
               <div className="space-y-2">
-                <h2 className="text-lg font-semibold">Gold Partners (Tradable)</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <h2 className="text-base sm:text-lg font-semibold">Gold Partners (Tradable)</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                   {filteredTradingTypes.map((gold) => {
                     const p = gold.priceData
                     return (
@@ -298,29 +298,27 @@ export function AdminPage() {
             )}
 
             {/* Charts รวม 6 ตัว */}
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:gap-6">
               <GoldChartsSix getStatus={getStatus} />
             </div>
           </div>
 
-          {/* Right Column: Control Panel and Status Descriptions (1/3 width) */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-4 sm:space-y-6">
             {/* Control Panel: เปลี่ยน ONLINE / PAUSE / STOP */}
             <Card>
               <CardHeader>
-                <CardTitle>Gold Price Status Control</CardTitle>
+                <CardTitle className="text-base sm:text-lg">Gold Price Status Control</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3 sm:space-y-4">
                 {filteredControlGoldTypes.map((gold) => {
                   const currentStatus = getStatus(gold.type)
 
                   return (
-                    <div key={gold.type} className="flex items-center justify-between p-4 border rounded-lg">
+                    <div key={gold.type} className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 sm:p-4 border rounded-lg">
                       <div>
-                        <div className="font-semibold">{gold.title}</div>
-                        <div className="text-sm text-muted-foreground">Type: {gold.type}</div>
+                        <div className="font-semibold text-sm sm:text-base">{gold.title}</div>
                       </div>
-                      <div className="flex items-center gap-3">
+                      <div className="flex flex-wrap items-center justify-end gap-1 sm:gap-2 mt-2 sm:mt-0">
                         <Badge
                           className={
                             currentStatus === "ONLINE"
@@ -332,11 +330,12 @@ export function AdminPage() {
                         >
                           {currentStatus}
                         </Badge>
-                        <div className="flex gap-2">
+                        <div className="flex gap-1">
                           <Button
                             size="sm"
-                            variant={currentStatus === "ONLINE" ? "default" : "outline"}
+                            variant={currentStatus === "ONLINE" ? "success" : "outline"}
                             onClick={() => updateStatus(gold.type, "ONLINE")}
+                            className="h-7 px-2 text-xs sm:h-8 sm:px-3 sm:text-sm"
                           >
                             Online
                           </Button>
@@ -344,6 +343,7 @@ export function AdminPage() {
                             size="sm"
                             variant={currentStatus === "PAUSE" ? "default" : "outline"}
                             onClick={() => updateStatus(gold.type, "PAUSE")}
+                            className="h-7 px-2 text-xs sm:h-8 sm:px-3 sm:text-sm"
                           >
                             Pause
                           </Button>
@@ -351,6 +351,7 @@ export function AdminPage() {
                             size="sm"
                             variant={currentStatus === "STOP" ? "destructive" : "outline"}
                             onClick={() => updateStatus(gold.type, "STOP")}
+                            className="h-7 px-2 text-xs sm:h-8 sm:px-3 sm:text-sm"
                           >
                             Stop
                           </Button>

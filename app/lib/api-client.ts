@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || ""
 
 class ApiClient {
   private token: string | null = null
@@ -26,10 +26,10 @@ class ApiClient {
   private async request(endpoint: string, options: RequestInit = {}) {
     const headersObj: Record<string, string> = {
       "Content-Type": "application/json",
-      ...(options.headers as Record<string, string> || {}),
+      ...((options.headers as Record<string, string>) || {}),
     }
 
-    const currentToken = typeof window !== "undefined" ? localStorage.getItem("auth_token") : null;
+    const currentToken = typeof window !== "undefined" ? localStorage.getItem("auth_token") : null
     if (currentToken) {
       headersObj["Authorization"] = `Bearer ${currentToken}`
     }
@@ -50,6 +50,9 @@ class ApiClient {
           const errorDetails = errBody?.details || errorMsg
           const customError = new Error(errorMsg) as any
           customError.details = errorDetails
+          if (errBody?.field) {
+            customError.field = errBody.field
+          }
           throw customError
         } else {
           const text = await response.text()
@@ -159,7 +162,6 @@ class ApiClient {
 export const apiClient = new ApiClient()
 
 export async function request(path: string, opts: RequestInit = {}) {
-
   const headers = new Headers(opts.headers || {})
 
   const token = typeof window !== "undefined" ? localStorage.getItem("auth_token") : null
@@ -181,6 +183,9 @@ export async function request(path: string, opts: RequestInit = {}) {
         const errorDetails = errorBody?.details || errorMsg
         const customError = new Error(errorMsg) as any
         customError.details = errorDetails
+        if (errorBody?.field) {
+          customError.field = errorBody.field
+        }
         throw customError
       } else {
         const text = await response.text()

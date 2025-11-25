@@ -2,10 +2,10 @@
 
 import { useState, useCallback } from "react"
 import { WalletCard } from "@/app/components/wallet/WalletCard"
+import { GoldHoldingsCard } from "@/app/components/wallet/GoldHoldingsCard"
 import { DepositDialog } from "@/app/components/wallet/DepositDialog"
 import { WithdrawDialog } from "@/app/components/wallet/WithdrawDialog"
 import { ExchangeDialog } from "@/app/components/wallet/ExchangeDialog"
-import { apiClient } from "@/app/lib/api-client"
 
 interface WalletPageProps {
   wallet: any
@@ -33,42 +33,52 @@ export default function WalletPage({
   }, [])
 
   return (
-    <div className="lg:col-span-1 space-y-6">
-      {wallet && (
-        <WalletCard
-          balance={wallet.balance}
-          goldHoldings={wallet.goldHoldings}
-          onDeposit={() => setDepositOpen(true)}
-          onWithdraw={() => setWithdrawOpen(true)}
-          onExchange={handleExchangeOpen}
-          currentMarketPrices={currentMarketPrices}
-          exchangeRates={exchangeRates}
-          averageCosts={averageCosts}
-        />
-      )}
+    <>
+      <div className="grid grid-cols-1 lg:grid-cols-10 gap-4 sm:gap-6 animate-slide-in">
+        {wallet && (
+          <>
+            <div className="lg:col-span-3">
+              <WalletCard
+                balance={wallet.balance}
+                goldHoldings={wallet.goldHoldings}
+                currentMarketPrices={currentMarketPrices}
+                exchangeRates={exchangeRates}
+                averageCosts={averageCosts}
+                onDeposit={() => setDepositOpen(true)}
+                onWithdraw={() => setWithdrawOpen(true)}
+                onExchange={handleExchangeOpen}
+              />
+            </div>
+            <div className="lg:col-span-7">
+              <GoldHoldingsCard
+                goldHoldings={wallet.goldHoldings}
+                currentMarketPrices={currentMarketPrices}
+                exchangeRates={exchangeRates}
+                averageCosts={averageCosts}
+              />
+            </div>
+          </>
+        )}
+      </div>
 
       <DepositDialog open={depositOpen} onOpenChange={setDepositOpen} onSuccess={fetchWallet} />
       {wallet && (
-        <WithdrawDialog
-          open={withdrawOpen}
-          onOpenChange={setWithdrawOpen}
-          onSuccess={fetchWallet}
-          maxAmount={
-            typeof wallet.balance === "number"
-              ? wallet.balance
-              : wallet.balance?.THB ?? 0
-          }
-        />
+        <>
+          <WithdrawDialog
+            open={withdrawOpen}
+            onOpenChange={setWithdrawOpen}
+            onSuccess={fetchWallet}
+            maxAmount={typeof wallet.balance === "number" ? wallet.balance : (wallet.balance?.THB ?? 0)}
+          />
+          <ExchangeDialog
+            open={exchangeOpen}
+            onOpenChange={setExchangeOpen}
+            onSuccess={fetchWallet}
+            thbBalance={wallet.balance?.THB ?? 0}
+            usdBalance={wallet.balance?.USD ?? 0}
+          />
+        </>
       )}
-      {wallet && (
-        <ExchangeDialog
-          open={exchangeOpen}
-          onOpenChange={setExchangeOpen}
-          onSuccess={fetchWallet}
-          thbBalance={wallet.balance?.THB ?? 0}
-          usdBalance={wallet.balance?.USD ?? 0}
-        />
-      )}
-    </div>
+    </>
   )
 }

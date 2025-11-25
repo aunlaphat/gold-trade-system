@@ -5,56 +5,78 @@ import { useState } from "react"
 import { useAuth } from "@/app/contexts/AuthContext"
 import { Button } from "@/app/components/ui/button"
 import { Input } from "@/app/components/ui/input"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/components/ui/card"
 import { Mail, Lock, Eye, EyeOff, AlertCircle } from "lucide-react"
+import { useToast } from "@/app/components/ui/use-toast"
 
 export function LoginForm() {
   const { login } = useAuth()
+  const { toast } = useToast()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [error, setError] = useState("")
+  const [emailError, setEmailError] = useState("")
+  const [passwordError, setPasswordError] = useState("")
+  const [generalError, setGeneralError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
-    const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault()
-  setError("")
-  setIsLoading(true)
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setEmailError("")
+    setPasswordError("")
+    setGeneralError("")
+    setIsLoading(true)
 
-  const result = await login(email, password)
+    const result = await login(email, password)
 
-  if (!result.success) {
-    setError(result.error || "Login failed")
+    if (!result.success) {
+      const errorMessage = result.error || "Login failed"
+      if (result.field === "email") {
+        setEmailError(errorMessage)
+      } else if (result.field === "password") {
+        setPasswordError(errorMessage)
+      } else {
+        setGeneralError(errorMessage)
+        toast({
+          title: "Login Failed",
+          description: errorMessage,
+          variant: "destructive",
+        })
+      }
+    }
+    setIsLoading(false)
   }
 
-  setIsLoading(false)
-}
-
   return (
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium text-slate-300">
-              Email
-            </label>
-                    <div className="relative group">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div className="space-y-2">
+        <label htmlFor="email" className="text-sm font-medium text-slate-300">
+          อีเมล
+        </label>
+        <div className="relative group">
           <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 group-focus-within:text-amber-400 transition-colors" />
-            <Input
-              id="email"
-              type="email"
-              placeholder="your-email@example.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="pl-11 h-12 bg-slate-800/50 border-slate-700 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 text-white placeholder:text-slate-500 transition-all"
-            />
-            </div>
+          <Input
+            id="email"
+            type="email"
+            placeholder="your-email@example.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="pl-11 h-12 bg-slate-800/50 border-slate-700 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 text-white placeholder:text-slate-500 transition-all"
+          />
+        </div>
+        {emailError && (
+          <div className="flex items-center gap-2 text-red-400 text-xs animate-fade-in">
+            <AlertCircle className="w-3 h-3" />
+            <span>{emailError}</span>
           </div>
+        )}
+      </div>
 
-          <div className="space-y-2">
-            <label htmlFor="password" className="text-sm font-medium text-slate-300">
-              Password
-            </label>
-                    <div className="relative group">
+      <div className="space-y-2">
+        <label htmlFor="password" className="text-sm font-medium text-slate-300">
+          รหัสผ่าน
+        </label>
+        <div className="relative group">
           <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 group-focus-within:text-amber-400 transition-colors" />
           <Input
             id="password"
@@ -65,19 +87,26 @@ const handleSubmit = async (e: React.FormEvent) => {
             required
             className="pl-11 pr-11 h-12 bg-slate-800/50 border-slate-700 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 text-white placeholder:text-slate-500 transition-all"
           />
-                      <button
+          <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-amber-400 transition-colors"
           >
             {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
           </button>
-            </div>
+        </div>
+        {passwordError && (
+          <div className="flex items-center gap-2 text-red-400 text-xs animate-fade-in">
+            <AlertCircle className="w-3 h-3" />
+            <span>{passwordError}</span>
           </div>
-     {error && (
+        )}
+      </div>
+
+      {generalError && (
         <div className="flex items-center gap-2 p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm animate-fade-in">
           <AlertCircle className="w-4 h-4 flex-shrink-0" />
-          <span>{error}</span>
+          <span>{generalError}</span>
         </div>
       )}
 
@@ -95,7 +124,6 @@ const handleSubmit = async (e: React.FormEvent) => {
           "เข้าสู่ระบบ"
         )}
       </Button>
-        </form>
-
+    </form>
   )
 }

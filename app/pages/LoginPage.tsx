@@ -4,8 +4,7 @@ import { useState } from "react"
 import { LoginForm } from "@/app/components/auth/LoginForm"
 import { RegisterForm } from "@/app/components/auth/RegisterForm"
 import { Button } from "@/app/components/ui/button"
-import { Card } from "@/app/components/ui/card"
-import { TrendingUp, Coins, Sparkles, Shield } from "lucide-react"
+import { Coins, Sparkles, Shield, TrendingUp } from "lucide-react"
 import Image from "next/image"
 
 export default function LoginPage() {
@@ -25,13 +24,14 @@ export default function LoginPage() {
         <div className="hidden md:block space-y-8 animate-fade-in-left">
           <div className="space-y-4">
             <div className="flex items-center gap-3 mb-6">
-              <div className="relative w-16 h-16 overflow-hidden rounded-xl bg-gradient-to-br from-amber-500 to-yellow-600 p-3 shadow-2xl shadow-amber-500/20 animate-float">
+              <div className="relative w-16 h-16 overflow-hidden rounded-xl shadow-2xl shadow-amber-500/20 animate-float">
                 <Image
-                  src="/logo-gold-system.png"
+                  src="/logo-system.jpg"
                   alt="Gold Trading Logo"
-                  width={64}
-                  height={64}
-                  className="object-contain"
+                  fill
+                  className="object-cover"
+                  sizes="64px"
+                  priority
                 />
               </div>
               <div>
@@ -116,7 +116,7 @@ export default function LoginPage() {
               <div className="md:hidden flex items-center justify-center gap-3 mb-8">
                 <div className="relative w-12 h-12 overflow-hidden rounded-lg bg-gradient-to-br from-amber-500 to-yellow-600 p-2 shadow-lg shadow-amber-500/20">
                   <Image
-                    src="/logo-gold-system.png"
+                    src="/logo-system.jpg"
                     alt="Gold Trading Logo"
                     width={48}
                     height={48}
@@ -133,31 +133,44 @@ export default function LoginPage() {
                 <p className="text-sm text-slate-400">{showRegister ? "เริ่มต้นการเทรดทองคำวันนี้" : "ยินดีต้อนรับกลับสู่ระบบ"}</p>
               </div>
 
-        {showRegister ? (
-          <>
-            <RegisterForm onRegisterSuccess={() => setShowRegister(false)} />
-            <div className="mt-6 text-center">
-              <p className="text-sm text-slate-400">
-              Already have an account?{" "}
-              <Button variant="link" onClick={() => setShowRegister(false)} className="p-0 h-auto font-semibold text-amber-400 hover:text-amber-300 transition-colors">
-                Login
-              </Button>
-               </p>
-            </div>
-          </>
-        ) : (
-          <>
-            <LoginForm />
-            <div className="mt-6 text-center">
-              <p className="text-sm text-slate-400">
-              Don't have an account?{" "}
-              <Button variant="link" onClick={() => setShowRegister(true)} className="p-0 h-auto font-semibold text-amber-400 hover:text-amber-300 transition-colors">
-                Register
-              </Button>
-              </p>
-            </div>
-          </>
-        )}
+             {showRegister ? (
+                <>
+                  <RegisterForm onRegisterSuccess={() => setShowRegister(false)} />
+                  <div className="mt-6 text-center">
+                    <p className="text-sm text-slate-400">
+                      มีบัญชีอยู่แล้ว?{" "}
+                      <Button
+                        variant="link"
+                        onClick={() => setShowRegister(false)}
+                        className="p-0 h-auto font-semibold text-amber-400 hover:text-amber-300 transition-colors"
+                      >
+                        เข้าสู่ระบบ
+                      </Button>
+                    </p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <LoginForm />
+                  <div className="mt-6 text-center">
+                    <p className="text-sm text-slate-400">
+                      ยังไม่มีบัญชี?{" "}
+                      <Button
+                        variant="link"
+                        onClick={() => setShowRegister(true)}
+                        className="p-0 h-auto font-semibold text-amber-400 hover:text-amber-300 transition-colors"
+                      >
+                        สร้างบัญชีใหม่
+                      </Button>
+                    </p>
+                  </div>
+                </>
+              )}
+
+              {/* Demo credentials hint */}
+              <div className="mt-6 p-4 bg-amber-500/5 border border-amber-500/20 rounded-lg">
+                <p className="text-xs text-amber-400/70 text-center">Admin: admin@example.com / adminpassword</p>
+              </div>
             </div>
           </div>
         </div>
