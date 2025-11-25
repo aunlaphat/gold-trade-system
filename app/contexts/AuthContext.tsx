@@ -53,7 +53,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(false)
   }, [])
 
-  const login = async (username: string, password: string): Promise<{ success: boolean; error?: string }> => {
+  const login = async (username: string, password: string) => {
     try {
       const response = await apiClient.login(username, password)
       setUser(response.user)
@@ -66,9 +66,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }
 
-  const register = async (email: string, username: string, password: string): Promise<{ success: boolean; error?: string }> => {
+  const register = async (email: string, username: string, password: string) => {
     try {
-      const response = await apiClient.register(email, username, password)
+      await apiClient.register(email, username, password)
       return { success: true }
     } catch (error: any) {
       console.error("Registration failed:", error)
