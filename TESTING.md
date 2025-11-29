@@ -1,316 +1,351 @@
-# Testing Guide - Gold Trading System
+# คู่มือการทดสอบระบบ Gold Trading System
 
-This document provides comprehensive testing instructions for the Real-Time Gold Trading System.
+## ภาพรวมการทดสอบ
 
-## Prerequisites
-
-Before running tests, ensure:
-
-1. **MongoDB is running**
-   \`\`\`bash
-   # Start MongoDB locally
-   mongod --dbpath /path/to/data
-   mongod --dbpath "C:\data\db"
-
-   \`\`\`
-
-2. **Database is initialized**
-   \`\`\`bash
-   npm run setup-db
-   \`\`\`
-
-3. **Backend server is running**
-   \`\`\`bash
-   npm run server:dev
-   \`\`\`
-
-## Test Cases Overview
-
-### TC-001: Concurrent Access Test
-**Requirement**: System must support 100+ concurrent users
-
-**What it tests**:
-- Multiple users can register/login simultaneously
-- API endpoints handle concurrent requests
-- Database connection pooling works correctly
-- Response times remain acceptable under load
-
-**How to run**:
-\`\`\`bash
-npm install -D tsx //ลงในเครื่องก่อนเพื่อใช้คำสั่งไฟล์เทสได้
-
-# Default: 100 users
-npm run test:concurrent
-
-# Custom user count
-node scripts/test-concurrent-access.js 150
-\`\`\`
-
-**Success Criteria**: 
-- 95% or more users successfully access the system
-- Average response time < 5000ms
+ระบบมี **2 ประเภทหลัก** ของการทดสอบ:
+1. **API Tests** - ทดสอบ API Endpoints ทุกตัว (28 test cases)
+2. **Performance Tests** - ทดสอบ 4 เคสสำคัญตาม Requirements
 
 ---
 
-### TC-002: Transaction Stability Test
-**Requirement**: Handle 100+ concurrent Gold 99.99% transactions
+## เตรียมความพร้อมก่อนทดสอบ
 
-**What it tests**:
-- Concurrent buy/sell operations
-- Wallet balance updates are atomic
-- Transaction integrity under load
-- Database write performance
+### 1. เริ่มต้น Backend Server
 
-**How to run**:
 \`\`\`bash
-# Default: 100 transactions
-npm run test:transactions
+# Terminal 1: Start Backend
+npm run server
 
-# Custom transaction count
-node scripts/test-transaction-stability.js 200
+# หรือใช้ dev mode (auto-reload)
+npm run server:dev
 \`\`\`
 
-**Success Criteria**:
-- 95% or more transactions complete successfully
-- No race conditions or data inconsistencies
-- Average response time < 3000ms
+รอจนเห็นข้อความ:
+\`\`\`
+🚀 Gold Trading System Backend
+📊 Server running on port 5000
+✅ MongoDB Connected
+✅ WebSocket server initialized
+\`\`\`
+
+### 2. ตรวจสอบ Environment Variables
+
+สร้างไฟล์ `.env` ในโฟลเดอร์ `server/`:
+
+\`\`\`env
+# Database
+MONGODB_URI=mongodb://localhost:27017
+DB_NAME=gold_trading_system
+
+# Server
+PORT=5000
+NODE_ENV=development
+
+# JWT
+JWT_SECRET=your-secret-key-here
+JWT_EXPIRES_IN=7d
+
+# API (สำหรับทดสอบ)
+API_URL=http://localhost:5000
+\`\`\`
+
+### 3. Setup Database (ครั้งแรกเท่านั้น)
+
+\`\`\`bash
+npm run setup-db
+\`\`\`
 
 ---
 
-### TC-003: Price Status Control Test
-**Requirement**: Status controls (ONLINE, PAUSE, STOP) work correctly
+## วิธีการทดสอบ
 
-**What it tests**:
-- Each gold type can be controlled independently
-- ONLINE: Normal operation with live prices
-- PAUSE: Prices freeze but remain visible
-- STOP: All prices set to 0
+### ✅ วิธีที่ 1: ทดสอบทั้งหมดด้วยคำสั่งเดียว (แนะนำ)
 
-**How to run**:
+#### A. ทดสอบ API ทั้งหมด (28 test cases)
+
 \`\`\`bash
-npm run test:status
+npm run test:api
 \`\`\`
 
-**Success Criteria**:
-- All status changes execute successfully
-- STOP status correctly sets prices to 0
-- Status updates are reflected in API responses
+**ทดสอบอะไรบ้าง:**
+- Authentication (Register, Login)
+- Wallet Operations (Deposit, Withdraw, Exchange)
+- Trading (Buy, Sell, History)
+- Prices (Current, History)
+- Admin (Status Control)
+
+**ผลลัพธ์ที่คาดหวัง:**
+\`\`\`
+✅ Register - should create new user
+✅ Login - should authenticate user
+✅ Deposit - should add THB to wallet
+✅ Buy Gold - should execute buy order
+✅ Sell Gold - should execute sell order
+...
+📊 Test Results Summary
+Total Tests: 28
+✅ Passed: 28
+❌ Failed: 0
+📈 Success Rate: 100%
+\`\`\`
 
 ---
 
-### TC-004: Real-Time Display Test
-**Requirement**: Prices update in real-time via WebSocket
-
-**What it tests**:
-- WebSocket connection stability
-- Real-time price updates are received
-- Update frequency matches server configuration
-- No dropped updates
-
-**How to run**:
-\`\`\`bash
-# Default: 30 seconds
-npm run test:realtime
-
-# Custom duration (in milliseconds)
-node scripts/test-realtime-display.js 60000
-\`\`\`
-
-**Success Criteria**:
-- WebSocket connects successfully
-- Receives at least 1 price update
-- Updates contain all expected gold types
-
----
-
-## Running All Tests
-
-Execute the complete test suite:
+#### B. ทดสอบ 4 เคสสำคัญตาม Requirements
 
 \`\`\`bash
 npm run test:all
 \`\`\`
 
-This will run all four test cases sequentially and generate a comprehensive report.
+**ทดสอบอะไรบ้าง:**
+1. **TC-001: Concurrent Access** - ระบบรองรับ 100+ users พร้อมกัน
+2. **TC-002: Transaction Stability** - ระบบประมวลผล 100+ transactions พร้อมกัน
+3. **TC-003: Status Control** - ควบคุมสถานะ ONLINE/PAUSE/STOP
+4. **TC-004: Real-Time Display** - แสดงราคา real-time ผ่าน WebSocket
 
-**Expected Output**:
+**ระยะเวลา:** ประมาณ 2-3 นาที
+
+**ผลลัพธ์ที่คาดหวัง:**
 \`\`\`
-================================================================================
-GOLD TRADING SYSTEM - COMPREHENSIVE TEST SUITE
-================================================================================
+✅ TC-001 - Concurrent Access: PASS
+  Success Rate: 100%
+  Avg Response Time: 250ms
 
-TC-001: Concurrent Access ✅ PASS
-TC-002: Transaction Stability ✅ PASS
-TC-003: Price Status Control ✅ PASS
-TC-004: Real-Time Display ✅ PASS
+✅ TC-002 - Transaction Stability: PASS
+  Success Rate: 100%
+  Throughput: 45 tx/s
+
+✅ TC-003 - Price Status Control: PASS
+  All status changes working correctly
+
+✅ TC-004 - Real-Time Display: PASS
+  Updates Received: 30+
+  Avg Latency: 50ms
 
 OVERALL STATUS: ✅ ALL TESTS PASSED
-================================================================================
 \`\`\`
 
-## Web-Based Testing
+---
 
-Access the visual test interface:
+### ✅ วิธีที่ 2: ทดสอบแต่ละเคสแยกกัน
 
-1. Start the frontend:
-   \`\`\`bash
-   npm run dev
-   \`\`\`
+#### TC-001: Concurrent Access Test
 
-2. Navigate to: `http://localhost:3000/test`
-
-3. Click "Run All Tests" or run individual tests
-
-## Manual Testing Checklist
-
-### User Authentication
-- [ ] Register new user
-- [ ] Login with existing user
-- [ ] Invalid credentials rejected
-- [ ] JWT token persists across sessions
-
-### Wallet Operations
-- [ ] Deposit money
-- [ ] Withdraw money
-- [ ] Insufficient balance prevents withdrawal
-- [ ] Balance updates in real-time
-
-### Trading Operations
-- [ ] Buy gold (each type)
-- [ ] Sell gold (each type)
-- [ ] Insufficient funds prevents buy
-- [ ] Insufficient holdings prevents sell
-- [ ] Transaction history updates
-
-### Price Display
-- [ ] Prices display for all gold types
-- [ ] Prices update in real-time
-- [ ] Price change animations work
-- [ ] Charts load and display correctly
-
-### Status Control (Admin)
-- [ ] Navigate to `/admin`
-- [ ] Change status to ONLINE
-- [ ] Change status to PAUSE
-- [ ] Change status to STOP (verify prices = 0)
-- [ ] Status changes reflect immediately
-
-## Performance Benchmarks
-
-### Expected Performance Metrics
-
-| Metric | Target | Measured |
-|--------|--------|----------|
-| Concurrent Users | 100+ | ___ |
-| Concurrent Transactions | 100+ | ___ |
-| API Response Time | < 500ms | ___ |
-| WebSocket Latency | < 100ms | ___ |
-| Price Update Interval | 5s | ___ |
-
-## Troubleshooting
-
-### MongoDB Connection Errors
-\`\`\`bash
-# Check if MongoDB is running
-ps aux | grep mongod
-
-# Restart MongoDB
-sudo systemctl restart mongod
-\`\`\`
-
-### Port Already in Use
-\`\`\`bash
-# Find process using port 5000
-lsof -i :5000
-
-# Kill the process
-kill -9 <PID>
-\`\`\`
-
-### WebSocket Connection Failed
-- Ensure backend server is running
-- Check CORS settings in server/server.js
-- Verify NEXT_PUBLIC_API_URL in .env.local
-
-### Test Failures
-- Check server logs for errors
-- Verify database is initialized
-- Ensure sufficient system resources
-- Try reducing concurrent load
-
-## Continuous Integration
-
-To integrate tests into CI/CD pipeline:
-
-\`\`\`yaml
-# .github/workflows/test.yml
-name: Test Suite
-
-on: [push, pull_request]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    
-    services:
-      mongodb:
-        image: mongo:7.0
-        ports:
-          - 27017:27017
-    
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '20'
-      
-      - run: npm install
-      - run: npm run setup-db
-      - run: npm run server &
-      - run: sleep 5
-      - run: npm run test:all
-\`\`\`
-
-## Load Testing
-
-For stress testing beyond 100+ concurrent operations:
+ทดสอบระบบรองรับผู้ใช้พร้อมกันได้กี่คน
 
 \`\`\`bash
-# Test with 500 users
-node scripts/test-concurrent-access.js 500
+# ทดสอบ 100 users (default)
+npm run test:concurrent
 
-# Test with 1000 transactions
-node scripts/test-transaction-stability.js 1000
+# ทดสอบ 500 users
+npm run test:concurrent -- 500
+
+# ทดสอบ 1000 users
+npm run test:concurrent -- 1000
 \`\`\`
 
-Monitor system resources during load tests:
-- CPU usage
-- Memory consumption
-- Database connections
-- Response times
+**ตัวชี้วัด:**
+- ✅ Success Rate ≥ 95%
+- ✅ Average Response Time < 1000ms
+- ✅ No server crashes
 
-## Test Data Cleanup
+---
 
-After testing, clean up test data:
+#### TC-002: Transaction Stability Test
 
-\`\`\`javascript
-// Connect to MongoDB
-use gold_trading_system;
+ทดสอบระบบประมวลผลธุรกรรมพร้อมกันได้กี่รายการ
 
-// Remove test users
-db.users.deleteMany({ email: /test/ });
+\`\`\`bash
+# ทดสอบ 100 transactions (default)
+npm run test:transactions
 
-// Remove test wallets
-db.wallets.deleteMany({ userId: { $in: testUserIds } });
+# ทดสอบ 500 transactions
+npm run test:transactions -- 500
 
-// Remove test transactions
-db.transactions.deleteMany({ userId: { $in: testUserIds } });
+# ทดสอบ 1000 transactions
+npm run test:transactions -- 1000
 \`\`\`
 
-## Support
+**ตัวชี้วัด:**
+- ✅ Success Rate ≥ 95%
+- ✅ Throughput ≥ 30 tx/s
+- ✅ No data inconsistency
 
-If tests fail or you encounter issues:
-1. Check server logs: Look for error messages
-2. Verify prerequisites: MongoDB, Node.js versions
-3. Review configuration: .env files, connection strings
-4. Contact support: Open an issue with test output
+---
+
+#### TC-003: Status Control Test
+
+ทดสอบการควบคุมสถานะ ONLINE/PAUSE/STOP
+
+\`\`\`bash
+npm run test:status
+\`\`\`
+
+**ทดสอบอะไร:**
+- ✅ ONLINE: ราคาอัปเดตปกติ
+- ✅ PAUSE: ราคา freeze ไม่เปลี่ยน
+- ✅ STOP: ราคาเป็น 0
+
+---
+
+#### TC-004: Real-Time Display Test
+
+ทดสอบ WebSocket real-time updates
+
+\`\`\`bash
+# ทดสอบ 30 วินาที (default)
+npm run test:realtime
+
+# ทดสอบ 60 วินาที
+npm run test:realtime -- 60000
+\`\`\`
+
+**ตัวชี้วัด:**
+- ✅ Receive ≥ 30 updates
+- ✅ Average latency < 100ms
+- ✅ No connection drops
+
+---
+
+## การทดสอบแบบละเอียด (Advanced)
+
+### ทดสอบด้วยจำนวนที่กำหนดเอง
+
+\`\`\`bash
+# Concurrent Access: 1000 users
+npm run test:concurrent -- 1000
+
+# Transaction Stability: 2000 transactions
+npm run test:transactions -- 2000
+
+# Real-Time Display: ทดสอบ 2 นาที (120000ms)
+npm run test:realtime -- 120000
+\`\`\`
+
+---
+
+## การแปลผลการทดสอบ
+
+### สถานะความสำเร็จ
+
+| สัญลักษณ์ | ความหมาย |
+|---------|---------|
+| ✅ PASS | ผ่านการทดสอบ |
+| ❌ FAIL | ไม่ผ่านการทดสอบ |
+| ⚠️ WARNING | ผ่านแต่มีข้อควรระวัง |
+
+### เกณฑ์การผ่าน
+
+#### API Tests
+- ✅ Pass: 100% (28/28 tests)
+- ❌ Fail: < 100%
+
+#### TC-001: Concurrent Access
+- ✅ Pass: Success Rate ≥ 95%
+- ❌ Fail: Success Rate < 95%
+
+#### TC-002: Transaction Stability
+- ✅ Pass: Success Rate ≥ 95% AND Throughput ≥ 30 tx/s
+- ❌ Fail: ไม่ผ่านเกณฑ์ใดเกณฑ์หนึ่ง
+
+#### TC-003: Status Control
+- ✅ Pass: ทุกสถานะทำงานถูกต้อง
+- ❌ Fail: สถานะใดสถานะหนึ่งไม่ทำงาน
+
+#### TC-004: Real-Time Display
+- ✅ Pass: Updates ≥ 30 AND Latency < 100ms
+- ❌ Fail: ไม่ผ่านเกณฑ์ใดเกณฑ์หนึ่ง
+
+---
+
+## แก้ปัญหาที่พบบ่อย
+
+### ปัญหา: Connection Refused (ECONNREFUSED)
+
+**สาเหตุ:** Backend server ไม่ทำงาน
+
+**วิธีแก้:**
+\`\`\`bash
+# เริ่ม Backend ใหม่
+npm run server
+\`\`\`
+
+---
+
+### ปัญหา: MongoDB Connection Failed
+
+**สาเหตุ:** MongoDB ไม่ทำงาน
+
+**วิธีแก้:**
+\`\`\`bash
+# Windows: เริ่ม MongoDB service
+net start MongoDB
+
+# Mac/Linux: เริ่ม MongoDB
+brew services start mongodb-community
+
+# หรือใช้ Docker
+docker run -d -p 27017:27017 mongo
+\`\`\`
+
+---
+
+### ปัญหา: Test Timeout
+
+**สาเหตุ:** Backend ช้าหรือมีปัญหา
+
+**วิธีแก้:**
+1. ตรวจสอบ Backend logs
+2. ลดจำนวนการทดสอบ (เช่น จาก 500 เป็น 100)
+3. รีสตาร์ท Backend
+
+---
+
+### ปัญหา: WebSocket Connection Failed (TC-004)
+
+**สาเหตุ:** WebSocket server ไม่ทำงาน
+
+**วิธีแก้:**
+1. ตรวจสอบว่า Backend เริ่มต้นด้วย WebSocket enabled
+2. ตรวจสอบ port 5000 ไม่ถูกใช้โดยโปรแกรมอื่น
+
+---
+
+## สรุป
+
+### ทดสอบทั้งหมดด้วยคำสั่งเดียว
+
+\`\`\`bash
+# 1. เริ่ม Backend
+npm run server
+
+# 2. ทดสอบ API ทั้งหมด (ในหน้าต่างใหม่)
+npm run test:api
+
+# 3. ทดสอบ 4 เคสสำคัญ
+npm run test:all
+\`\`\`
+
+### ไม่ต้องรันแบบนี้อีกต่อไป ❌
+
+\`\`\`bash
+# ❌ เดิม: รันแบบละเอียด
+node server/tests/test-concurrent-access.ts 500
+node server/tests/test-transaction-stability.ts 1000
+
+# ✅ ใหม่: รันง่ายขึ้น
+npm run test:concurrent -- 500
+npm run test:transactions -- 1000
+\`\`\`
+
+---
+
+## เอกสารเพิ่มเติม
+
+- [API Documentation](./API_DOCUMENTATION.md) - รายละเอียด API Endpoints
+- [README.md](../README.md) - คู่มือการติดตั้งระบบ
+- [DEPLOYMENT.md](../DEPLOYMENT.md) - คู่มือการ Deploy
+
+---
+
+**หมายเหตุ:** การทดสอบทั้งหมดจะสร้าง test users และข้อมูลทดสอบในฐานข้อมูล หากต้องการล้างข้อมูล ให้รัน `npm run setup-db` ใหม่

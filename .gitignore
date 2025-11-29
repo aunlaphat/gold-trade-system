@@ -16,10 +16,10 @@ yarn-debug.log*
 pnpm-debug.log*
 *.log
 
-# Env files (secrets)
-.env
-.env.local
-.env*.local
+# Env files (secrets) ในกรณีใช้งานจริงต้องป้องกันไว้ไม่ให้ commit ลง git
+# .env
+# .env.local
+# .env*.local
 
 # Editor / OS junk
 .DS_Store
