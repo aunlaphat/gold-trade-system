@@ -3,9 +3,9 @@
 ## Quick Start Deployment
 ### 1. Local Development Setup
 
-# Clone repository or Dowload file zip : https://github.com/aunlaphat/gold-trade-system
-git clone https://github.com/aunlaphat/gold-trade-system.git
-cd gold-trading-system
+- Clone repository or Dowload file zip : https://github.com/aunlaphat/gold-trade-system
+- git clone https://github.com/aunlaphat/gold-trade-system.git
+- cd gold-trading-system
 
 # Install dependencies
 npm install
@@ -140,10 +140,6 @@ Access the application:
 <img src="./images/changecurrency.png" width="800" />
 
 <img src="./images/darkwhitemode.png" width="800" />
-
----
-
-### 🟥 Admin Pages
 
 <img src="./images/adminpage.png" width="800" />
 
