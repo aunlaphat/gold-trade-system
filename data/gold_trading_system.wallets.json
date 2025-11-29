@@ -1,0 +1,6874 @@
+[{
+  "_id": {
+    "$oid": "691ff5cb007d4354abcb93d1"
+  },
+  "userId": {
+    "$oid": "691ff5ba007d4354abcb936c"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:16:59.135Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:16:59.135Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cb007d4354abcb93d2"
+  },
+  "userId": {
+    "$oid": "691ff5bc007d4354abcb936d"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:16:59.136Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:16:59.136Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cb007d4354abcb93d3"
+  },
+  "userId": {
+    "$oid": "691ff5bc007d4354abcb936e"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:16:59.136Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:16:59.136Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93e1"
+  },
+  "userId": {
+    "$oid": "691ff5bc007d4354abcb936f"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.085Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.085Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93e2"
+  },
+  "userId": {
+    "$oid": "691ff5bc007d4354abcb9370"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.085Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.085Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93e3"
+  },
+  "userId": {
+    "$oid": "691ff5bc007d4354abcb9371"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.086Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.086Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93e4"
+  },
+  "userId": {
+    "$oid": "691ff5bc007d4354abcb9372"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.087Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.087Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93e5"
+  },
+  "userId": {
+    "$oid": "691ff5bc007d4354abcb9373"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.087Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.087Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93e6"
+  },
+  "userId": {
+    "$oid": "691ff5bc007d4354abcb9374"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.088Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.088Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93e7"
+  },
+  "userId": {
+    "$oid": "691ff5bc007d4354abcb9375"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.089Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.089Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93e8"
+  },
+  "userId": {
+    "$oid": "691ff5bc007d4354abcb9376"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.089Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.089Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93e9"
+  },
+  "userId": {
+    "$oid": "691ff5bc007d4354abcb9377"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.089Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.089Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93ea"
+  },
+  "userId": {
+    "$oid": "691ff5bc007d4354abcb9378"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.090Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.090Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93eb"
+  },
+  "userId": {
+    "$oid": "691ff5be007d4354abcb9379"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.091Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.091Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93ec"
+  },
+  "userId": {
+    "$oid": "691ff5be007d4354abcb937a"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.091Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.091Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93ed"
+  },
+  "userId": {
+    "$oid": "691ff5be007d4354abcb937b"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.091Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.091Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93ee"
+  },
+  "userId": {
+    "$oid": "691ff5be007d4354abcb937c"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.092Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.092Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93ef"
+  },
+  "userId": {
+    "$oid": "691ff5be007d4354abcb937d"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.092Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.092Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb93f0"
+  },
+  "userId": {
+    "$oid": "691ff5be007d4354abcb937e"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.093Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.093Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9406"
+  },
+  "userId": {
+    "$oid": "691ff5be007d4354abcb937f"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.716Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.716Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9407"
+  },
+  "userId": {
+    "$oid": "691ff5be007d4354abcb9380"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.716Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.716Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9408"
+  },
+  "userId": {
+    "$oid": "691ff5be007d4354abcb9381"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.717Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.717Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9409"
+  },
+  "userId": {
+    "$oid": "691ff5be007d4354abcb9382"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.718Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.718Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb940a"
+  },
+  "userId": {
+    "$oid": "691ff5be007d4354abcb9383"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.718Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.718Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb940b"
+  },
+  "userId": {
+    "$oid": "691ff5be007d4354abcb9384"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.719Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.719Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb940c"
+  },
+  "userId": {
+    "$oid": "691ff5be007d4354abcb9385"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.719Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.719Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb940d"
+  },
+  "userId": {
+    "$oid": "691ff5bf007d4354abcb9386"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.719Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.719Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb940e"
+  },
+  "userId": {
+    "$oid": "691ff5bf007d4354abcb9387"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.720Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.720Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb940f"
+  },
+  "userId": {
+    "$oid": "691ff5bf007d4354abcb9388"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.720Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.720Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9411"
+  },
+  "userId": {
+    "$oid": "691ff5bf007d4354abcb938a"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.722Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.722Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9410"
+  },
+  "userId": {
+    "$oid": "691ff5bf007d4354abcb9389"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.721Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.721Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9413"
+  },
+  "userId": {
+    "$oid": "691ff5bf007d4354abcb938c"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.723Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.723Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9412"
+  },
+  "userId": {
+    "$oid": "691ff5bf007d4354abcb938b"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.722Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.722Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9414"
+  },
+  "userId": {
+    "$oid": "691ff5bf007d4354abcb938d"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.723Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.723Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9415"
+  },
+  "userId": {
+    "$oid": "691ff5bf007d4354abcb938e"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.726Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9416"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb939a"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.728Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.728Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9417"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb939b"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.729Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.729Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9418"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb939c"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.729Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.729Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9419"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb939d"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.730Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.730Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb941a"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb939e"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.731Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.731Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb941b"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb939f"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.731Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.731Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9429"
+  },
+  "userId": {
+    "$oid": "691ff5bf007d4354abcb9391"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.936Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.936Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb942a"
+  },
+  "userId": {
+    "$oid": "691ff5bf007d4354abcb9392"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.938Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.938Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb942b"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb9393"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.939Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.939Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb942c"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb9394"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.940Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.940Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb942d"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb9395"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.942Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.942Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb942e"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb9396"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.944Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.944Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb942f"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb9397"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.946Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.946Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9430"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb9398"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.948Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.948Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9431"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb9399"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.948Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.948Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9432"
+  },
+  "userId": {
+    "$oid": "691ff5c2007d4354abcb93a0"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.958Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.958Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9433"
+  },
+  "userId": {
+    "$oid": "691ff5c4007d4354abcb93a1"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.960Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.960Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9434"
+  },
+  "userId": {
+    "$oid": "691ff5c4007d4354abcb93a2"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.960Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.960Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9435"
+  },
+  "userId": {
+    "$oid": "691ff5c4007d4354abcb93a3"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.965Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.965Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9438"
+  },
+  "userId": {
+    "$oid": "691ff5c4007d4354abcb93a6"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.967Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.967Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9439"
+  },
+  "userId": {
+    "$oid": "691ff5c4007d4354abcb93a7"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.968Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.968Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb943a"
+  },
+  "userId": {
+    "$oid": "691ff5c4007d4354abcb93a8"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.968Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.968Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb943b"
+  },
+  "userId": {
+    "$oid": "691ff5c4007d4354abcb93a9"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.969Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.969Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb943c"
+  },
+  "userId": {
+    "$oid": "691ff5c4007d4354abcb93ad"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.971Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.971Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb943d"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93af"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.974Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.974Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb943e"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93b0"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.974Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.974Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb943f"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93b1"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.975Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.975Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9440"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93b6"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.975Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.975Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9441"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93bf"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.976Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.976Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9442"
+  },
+  "userId": {
+    "$oid": "691ff5c4007d4354abcb93aa"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.181Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.181Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9443"
+  },
+  "userId": {
+    "$oid": "691ff5c4007d4354abcb93ab"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.182Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.182Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9445"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93ae"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.182Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.182Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9446"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93b2"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.183Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.183Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9447"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93b3"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.183Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.183Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9444"
+  },
+  "userId": {
+    "$oid": "691ff5c4007d4354abcb93ac"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.182Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.182Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9448"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93b4"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.184Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.184Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9449"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93b5"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.185Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.185Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb944a"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93b7"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.185Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.185Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb944b"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93b8"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.186Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb944c"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93b9"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.186Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb944d"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93ba"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.186Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb944e"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93bb"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.187Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.187Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb944f"
+  },
+  "userId": {
+    "$oid": "691ff5c6007d4354abcb93bc"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.187Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.187Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9450"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93bd"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.188Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.188Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9451"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93be"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.189Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.189Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9452"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93c0"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.189Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.189Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9453"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93c1"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.243Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.243Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9454"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93c2"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.243Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.243Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9455"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93c3"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.244Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.244Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9456"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93c4"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.244Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.244Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9457"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93c5"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.245Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.245Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9458"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93c6"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.245Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.245Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9459"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93c7"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.245Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.245Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb945a"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93c8"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.246Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.246Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb945b"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93c9"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.246Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.246Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb945c"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93ca"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.247Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.247Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb945d"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93cb"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.247Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.247Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb945e"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93cc"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.247Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.247Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb945f"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93cd"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.248Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.248Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9460"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93ce"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.248Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.248Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9461"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93cf"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.250Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.250Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9462"
+  },
+  "userId": {
+    "$oid": "691ff5c8007d4354abcb93d0"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.250Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.250Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9465"
+  },
+  "userId": {
+    "$oid": "691ff5cb007d4354abcb93d4"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.263Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.263Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9466"
+  },
+  "userId": {
+    "$oid": "691ff5cb007d4354abcb93d5"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.263Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.263Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9467"
+  },
+  "userId": {
+    "$oid": "691ff5cb007d4354abcb93d6"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.264Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.264Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9468"
+  },
+  "userId": {
+    "$oid": "691ff5cb007d4354abcb93d7"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.264Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.264Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9469"
+  },
+  "userId": {
+    "$oid": "691ff5cb007d4354abcb93d8"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.264Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.264Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb946a"
+  },
+  "userId": {
+    "$oid": "691ff5cb007d4354abcb93d9"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.265Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.265Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb946b"
+  },
+  "userId": {
+    "$oid": "691ff5bf007d4354abcb938f"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.265Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.265Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb946c"
+  },
+  "userId": {
+    "$oid": "691ff5bf007d4354abcb9390"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.266Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.266Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb946d"
+  },
+  "userId": {
+    "$oid": "691ff5cb007d4354abcb93dc"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.267Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.267Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb946e"
+  },
+  "userId": {
+    "$oid": "691ff5cb007d4354abcb93dd"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.267Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.267Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb946f"
+  },
+  "userId": {
+    "$oid": "691ff5cb007d4354abcb93de"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.267Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.267Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9470"
+  },
+  "userId": {
+    "$oid": "691ff5cb007d4354abcb93df"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.268Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.268Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9471"
+  },
+  "userId": {
+    "$oid": "691ff5cb007d4354abcb93e0"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.268Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.268Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9472"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93f1"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.329Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.329Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9473"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93f2"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.330Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.330Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9474"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93f3"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.331Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.331Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9475"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93f4"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.341Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.341Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9476"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93f5"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.349Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.349Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9477"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93f6"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.356Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.356Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9478"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93f7"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.364Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.364Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9479"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9401"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.371Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.371Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb947a"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93f8"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.429Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.429Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb947b"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93f9"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.432Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.432Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb947c"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93fa"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.480Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.480Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb947d"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93fb"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.483Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.483Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb947e"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93fc"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.484Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.484Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb947f"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93fd"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.496Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.496Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9480"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93fe"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.508Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.508Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9481"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb93ff"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.512Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.512Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9482"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9400"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.514Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.514Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9483"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9402"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.527Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.527Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9484"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9403"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.530Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.530Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9436"
+  },
+  "userId": {
+    "$oid": "691ff5c4007d4354abcb93a4"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.966Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.966Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cd007d4354abcb9437"
+  },
+  "userId": {
+    "$oid": "691ff5c4007d4354abcb93a5"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:01.967Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:01.967Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9487"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb941e"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.644Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.644Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9488"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb941f"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.650Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9489"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9420"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.652Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.652Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb948a"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb941c"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.687Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.687Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb948b"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb941d"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.688Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.688Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb948c"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9421"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.688Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.688Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb948d"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9422"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.690Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.690Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb948e"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9423"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.694Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb948f"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9424"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.701Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.701Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9490"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9425"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.702Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.702Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9491"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9426"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.707Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.707Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9492"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9427"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.707Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.707Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9493"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9428"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.710Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.710Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9494"
+  },
+  "userId": {
+    "$oid": "691ff5cb007d4354abcb93da"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.811Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.811Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9495"
+  },
+  "userId": {
+    "$oid": "691ff5cb007d4354abcb93db"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.812Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.812Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9497"
+  },
+  "userId": {
+    "$oid": "691ff5ce007d4354abcb9464"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.984Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.984Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5cf007d4354abcb9499"
+  },
+  "userId": {
+    "$oid": "691ff5ce007d4354abcb9463"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:03.022Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:03.022Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9485"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9404"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.533Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.533Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff5ce007d4354abcb9486"
+  },
+  "userId": {
+    "$oid": "691ff5cd007d4354abcb9405"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:17:02.534Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:17:02.534Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff72e7b0e693966f6eff1"
+  },
+  "userId": {
+    "$oid": "691ff72e7b0e693966f6eff0"
+  },
+  "balance": 9690391.80000002,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 4.799999999999999,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:22:54.411Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:22:54.729Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "691ff9391024cd4253d70496"
+  },
+  "userId": {
+    "$oid": "691ff9391024cd4253d70495"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T05:31:37.817Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T05:33:40.894Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69200b80bf547012a063f4bf"
+  },
+  "userId": {
+    "$oid": "69200b80bf547012a063f4be"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T06:49:36.305Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T06:49:36.305Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692015b0f9982fda3484aa7c"
+  },
+  "userId": {
+    "$oid": "692015b0f9982fda3484aa7b"
+  },
+  "balance": 0,
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-21T07:33:04.508Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T07:33:04.508Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69201d8f65db7e5e41afd08e"
+  },
+  "userId": {
+    "$oid": "69201d8f65db7e5e41afd08d"
+  },
+  "balance": {
+    "THB": 9094929.25088,
+    "USD": 1400.3216431142441
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0.98,
+    "GOLD_965": 2,
+    "GOLD_9999_MTS": 3.98,
+    "GOLD_965_MTS": 8,
+    "GOLD_965_ASSO": 16.5
+  },
+  "createdAt": {
+    "$date": "2025-11-21T08:06:39.250Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T10:07:25.759Z"
+  },
+  "averageCosts": {
+    "GOLD_965_ASSO": 59362.15383914332,
+    "GOLD_9999_MTS": 65530.75272334829,
+    "GOLD_965_MTS": 39655.625
+  }
+},
+{
+  "_id": {
+    "$oid": "692325507cad32ada9ebc76f"
+  },
+  "userId": {
+    "$oid": "692325507cad32ada9ebc76e"
+  },
+  "balance": {
+    "THB": 35289,
+    "USD": 3.082614056720099
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 1,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-23T15:16:32.867Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-23T15:50:03.625Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6924190562ae840152e261e4"
+  },
+  "userId": {
+    "$oid": "6924190562ae840152e261e3"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-24T08:36:21.985Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-24T08:36:21.985Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69241bf47ddf8fe3406f6d04"
+  },
+  "userId": {
+    "$oid": "69241bf47ddf8fe3406f6d03"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-24T08:48:52.134Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-24T08:48:52.134Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692420c4a4ffa305673b7298"
+  },
+  "userId": {
+    "$oid": "692420c4a4ffa305673b7297"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-24T09:09:24.302Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-24T09:09:24.302Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69242100a4ffa305673b729a"
+  },
+  "userId": {
+    "$oid": "69242100a4ffa305673b7299"
+  },
+  "balance": {
+    "THB": 361625,
+    "USD": 154.13070283600496
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 4.5
+  },
+  "createdAt": {
+    "$date": "2025-11-24T09:10:24.872Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T17:57:11.942Z"
+  },
+  "averageCosts": {
+    "GOLD_965_ASSO": 62972.22222222222
+  }
+},
+{
+  "_id": {
+    "$oid": "6924bfbe99cf09b280f7f77c"
+  },
+  "userId": {
+    "$oid": "6924bfbe99cf09b280f7f77b"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-24T20:27:42.255Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-24T20:27:42.255Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692841d66c5d2a772fb6aad3"
+  },
+  "userId": {
+    "$oid": "692841d66c5d2a772fb6aad2"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T12:19:34.885Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T12:19:34.885Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6928421f6c5d2a772fb6aad6"
+  },
+  "userId": {
+    "$oid": "6928421f6c5d2a772fb6aad5"
+  },
+  "balance": {
+    "THB": 36650,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 1
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 63350
+  },
+  "createdAt": {
+    "$date": "2025-11-27T12:20:47.643Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T12:22:49.921Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692845466c5d2a772fb6aae6"
+  },
+  "userId": {
+    "$oid": "692845466c5d2a772fb6aae5"
+  },
+  "balance": {
+    "THB": 10000000,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T12:34:14.113Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T12:34:14.119Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69286ecef532f36877a614b5"
+  },
+  "userId": {
+    "$oid": "69286ecef532f36877a614b4"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T15:31:26.689Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T15:31:26.689Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69286ecef532f36877a614b7"
+  },
+  "userId": {
+    "$oid": "69286ecef532f36877a614b6"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T15:31:26.773Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T15:31:26.773Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69286ecef532f36877a614b9"
+  },
+  "userId": {
+    "$oid": "69286ecef532f36877a614b8"
+  },
+  "balance": {
+    "THB": 58000,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T15:31:26.850Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T15:31:27.088Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287707f532f36877a614de"
+  },
+  "userId": {
+    "$oid": "69287707f532f36877a614dd"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:06:31.628Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:06:31.628Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287707f532f36877a614e0"
+  },
+  "userId": {
+    "$oid": "69287707f532f36877a614df"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:06:31.754Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:06:31.754Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287707f532f36877a614e2"
+  },
+  "userId": {
+    "$oid": "69287707f532f36877a614e1"
+  },
+  "balance": {
+    "THB": 58000,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:06:31.890Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:06:32.184Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287731f532f36877a614e5"
+  },
+  "userId": {
+    "$oid": "69287731f532f36877a614e4"
+  },
+  "balance": {
+    "THB": 9671834.999999963,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 4.999999999999998,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 65633,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:07:13.095Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:07:13.677Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287733f532f36877a61519"
+  },
+  "userId": {
+    "$oid": "69287733f532f36877a61518"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:07:15.854Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:07:15.854Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287775f532f36877a6151c"
+  },
+  "userId": {
+    "$oid": "69287775f532f36877a6151b"
+  },
+  "balance": {
+    "THB": 9678393.999999963,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 4.899999999999999,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 65633,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:08:21.015Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:08:21.387Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287777f532f36877a61551"
+  },
+  "userId": {
+    "$oid": "69287777f532f36877a61550"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:08:23.475Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:08:23.475Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287a596f6d7ed0b4eb9000"
+  },
+  "userId": {
+    "$oid": "69287a596f6d7ed0b4eb8fff"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:20:41.554Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:20:41.554Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287a596f6d7ed0b4eb9002"
+  },
+  "userId": {
+    "$oid": "69287a596f6d7ed0b4eb9001"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:20:41.658Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:20:41.658Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287a596f6d7ed0b4eb9004"
+  },
+  "userId": {
+    "$oid": "69287a596f6d7ed0b4eb9003"
+  },
+  "balance": {
+    "THB": 58000,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:20:41.744Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:20:42.005Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287a9d053959bc89e042a9"
+  },
+  "userId": {
+    "$oid": "69287a9d053959bc89e042a8"
+  },
+  "balance": {
+    "THB": 9671834.999999963,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 4.999999999999998,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 65633,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:21:49.389Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:21:49.917Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287aa0053959bc89e042dd"
+  },
+  "userId": {
+    "$oid": "69287aa0053959bc89e042dc"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:21:52.171Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:21:52.171Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287c5fea3380ae33062c58"
+  },
+  "userId": {
+    "$oid": "69287c5fea3380ae33062c57"
+  },
+  "balance": {
+    "THB": 9679390.799999963,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 4.899999999999999,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 65633,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:29:19.097Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:29:20.225Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287c62ea3380ae33062c8d"
+  },
+  "userId": {
+    "$oid": "69287c62ea3380ae33062c8c"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:29:22.714Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:29:22.714Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287f1d205560517aab90a6"
+  },
+  "userId": {
+    "$oid": "69287f1d205560517aab90a5"
+  },
+  "balance": {
+    "THB": 9999750,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:41:01.492Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:41:01.897Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69287f20205560517aab910c"
+  },
+  "userId": {
+    "$oid": "69287f20205560517aab910b"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-27T16:41:04.195Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T16:41:04.195Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692921f87c0d8df8135e9b1c"
+  },
+  "userId": {
+    "$oid": "692921f87c0d8df8135e9b1b"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T04:15:52.524Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T04:15:52.524Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692921f87c0d8df8135e9b1e"
+  },
+  "userId": {
+    "$oid": "692921f87c0d8df8135e9b1d"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T04:15:52.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T04:15:52.651Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692921f87c0d8df8135e9b20"
+  },
+  "userId": {
+    "$oid": "692921f87c0d8df8135e9b1f"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T04:15:52.785Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T04:15:52.785Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692921fa7c0d8df8135e9b22"
+  },
+  "userId": {
+    "$oid": "692921fa7c0d8df8135e9b21"
+  },
+  "balance": {
+    "THB": 10000029.999999981,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T04:15:54.617Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T04:15:55.070Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692921fd7c0d8df8135e9b88"
+  },
+  "userId": {
+    "$oid": "692921fd7c0d8df8135e9b87"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T04:15:57.381Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T04:15:57.381Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69294d4c7f1419201d2e4ef3"
+  },
+  "userId": {
+    "$oid": "69294d4c7f1419201d2e4ef2"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T07:20:44.508Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T07:20:44.508Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69294d4c7f1419201d2e4ef5"
+  },
+  "userId": {
+    "$oid": "69294d4c7f1419201d2e4ef4"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T07:20:44.674Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T07:20:44.674Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69294d4c7f1419201d2e4ef7"
+  },
+  "userId": {
+    "$oid": "69294d4c7f1419201d2e4ef6"
+  },
+  "balance": {
+    "THB": 118000,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T07:20:44.859Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T07:20:45.294Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69294d687f1419201d2e4efa"
+  },
+  "userId": {
+    "$oid": "69294d687f1419201d2e4ef9"
+  },
+  "balance": {
+    "THB": 9999945.000000019,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 6.597840215978402,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T07:21:12.810Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T07:21:13.115Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69294d6b7f1419201d2e4f60"
+  },
+  "userId": {
+    "$oid": "69294d6b7f1419201d2e4f5f"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T07:21:15.342Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T07:21:15.342Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6929513439b34d6cace1a117"
+  },
+  "userId": {
+    "$oid": "6929513439b34d6cace1a116"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T07:37:24.765Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T07:37:24.765Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6929513439b34d6cace1a119"
+  },
+  "userId": {
+    "$oid": "6929513439b34d6cace1a118"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T07:37:24.855Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T07:37:24.855Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6929513439b34d6cace1a11b"
+  },
+  "userId": {
+    "$oid": "6929513439b34d6cace1a11a"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T07:37:24.943Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T07:37:24.943Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69295c613c46a43db84b7d27"
+  },
+  "userId": {
+    "$oid": "69295c613c46a43db84b7d26"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T08:25:05.827Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T08:25:05.827Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69295c623c46a43db84b7d29"
+  },
+  "userId": {
+    "$oid": "69295c623c46a43db84b7d28"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T08:25:06.017Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T08:25:06.017Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69295c623c46a43db84b7d2b"
+  },
+  "userId": {
+    "$oid": "69295c623c46a43db84b7d2a"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T08:25:06.183Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T08:25:06.183Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69295c633c46a43db84b7d2d"
+  },
+  "userId": {
+    "$oid": "69295c633c46a43db84b7d2c"
+  },
+  "balance": {
+    "THB": 9999054.999999981,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T08:25:07.984Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T08:25:09.708Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69295c683c46a43db84b7d93"
+  },
+  "userId": {
+    "$oid": "69295c683c46a43db84b7d92"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T08:25:12.621Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T08:25:12.621Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692963093c46a43db84b7db4"
+  },
+  "userId": {
+    "$oid": "692963093c46a43db84b7db3"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T08:53:29.933Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T08:53:29.933Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6929630a3c46a43db84b7db6"
+  },
+  "userId": {
+    "$oid": "6929630a3c46a43db84b7db5"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T08:53:30.104Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T08:53:30.104Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6929630a3c46a43db84b7db8"
+  },
+  "userId": {
+    "$oid": "6929630a3c46a43db84b7db7"
+  },
+  "balance": {
+    "THB": 58000,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T08:53:30.271Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T08:53:30.675Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6929632c3c46a43db84b7dbb"
+  },
+  "userId": {
+    "$oid": "6929632c3c46a43db84b7dba"
+  },
+  "balance": {
+    "THB": 9999345.000000019,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 6.575842415758424,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T08:54:04.126Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T08:54:04.453Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6929632e3c46a43db84b7e21"
+  },
+  "userId": {
+    "$oid": "6929632e3c46a43db84b7e20"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T08:54:06.824Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T08:54:06.824Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692967053c46a43db84b7e3a"
+  },
+  "userId": {
+    "$oid": "692967053c46a43db84b7e39"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:10:29.138Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:10:29.138Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692967053c46a43db84b7e3c"
+  },
+  "userId": {
+    "$oid": "692967053c46a43db84b7e3b"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:10:29.305Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:10:29.305Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692967053c46a43db84b7e3e"
+  },
+  "userId": {
+    "$oid": "692967053c46a43db84b7e3d"
+  },
+  "balance": {
+    "THB": 58000,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:10:29.457Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:10:29.822Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296940c91005eba766d248"
+  },
+  "userId": {
+    "$oid": "69296940c91005eba766d247"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:20:00.336Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:20:00.336Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296940c91005eba766d24a"
+  },
+  "userId": {
+    "$oid": "69296940c91005eba766d249"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:20:00.485Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:20:00.485Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296940c91005eba766d24c"
+  },
+  "userId": {
+    "$oid": "69296940c91005eba766d24b"
+  },
+  "balance": {
+    "THB": 58000,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:20:00.612Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:20:01.496Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296940c91005eba766d24e"
+  },
+  "userId": {
+    "$oid": "69296940c91005eba766d24d"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:20:00.975Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:20:00.975Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296942c91005eba766d250"
+  },
+  "userId": {
+    "$oid": "69296942c91005eba766d24f"
+  },
+  "balance": {
+    "THB": 9999770.000000019,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:20:02.450Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:20:03.002Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296945c91005eba766d2b7"
+  },
+  "userId": {
+    "$oid": "69296945c91005eba766d2b6"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:20:05.379Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:20:05.379Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692969e6e290bac54e2c840d"
+  },
+  "userId": {
+    "$oid": "692969e6e290bac54e2c840c"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:22:46.080Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:22:46.080Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692969e6e290bac54e2c840f"
+  },
+  "userId": {
+    "$oid": "692969e6e290bac54e2c840e"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:22:46.283Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:22:46.283Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692969e6e290bac54e2c8411"
+  },
+  "userId": {
+    "$oid": "692969e6e290bac54e2c8410"
+  },
+  "balance": {
+    "THB": 75566.5,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0.5,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 65375,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:22:46.477Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:22:47.770Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692969e7e290bac54e2c8413"
+  },
+  "userId": {
+    "$oid": "692969e7e290bac54e2c8412"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:22:47.140Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:22:47.140Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296a19e290bac54e2c8419"
+  },
+  "userId": {
+    "$oid": "69296a19e290bac54e2c8418"
+  },
+  "balance": {
+    "THB": 9999134.999999963,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 6.567743225677432,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:23:37.239Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:23:37.698Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296a1ce290bac54e2c847f"
+  },
+  "userId": {
+    "$oid": "69296a1ce290bac54e2c847e"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:23:40.206Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:23:40.206Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296c3a3018a3a10057b662"
+  },
+  "userId": {
+    "$oid": "69296c3a3018a3a10057b661"
+  },
+  "balance": {
+    "THB": 9999445.000000019,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 6.567743225677432,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:32:42.454Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:32:42.767Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296c3d3018a3a10057b6c8"
+  },
+  "userId": {
+    "$oid": "69296c3d3018a3a10057b6c7"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:32:45.039Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:32:45.039Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296c8d3018a3a10057b6ce"
+  },
+  "userId": {
+    "$oid": "69296c8d3018a3a10057b6cd"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:34:05.726Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:34:05.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296c8d3018a3a10057b6d0"
+  },
+  "userId": {
+    "$oid": "69296c8d3018a3a10057b6cf"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:34:05.816Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:34:05.816Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296c8d3018a3a10057b6d2"
+  },
+  "userId": {
+    "$oid": "69296c8d3018a3a10057b6d1"
+  },
+  "balance": {
+    "THB": 75568,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0.5,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 65372,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:34:05.902Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:34:06.764Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69296c8e3018a3a10057b6d4"
+  },
+  "userId": {
+    "$oid": "69296c8e3018a3a10057b6d3"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T09:34:06.232Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T09:34:06.232Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6929735b92fe3ed5d8a21b7d"
+  },
+  "userId": {
+    "$oid": "6929735b92fe3ed5d8a21b7c"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:03:07.518Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:03:07.518Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6929735b92fe3ed5d8a21b7f"
+  },
+  "userId": {
+    "$oid": "6929735b92fe3ed5d8a21b7e"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:03:07.668Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:03:07.668Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6929735b92fe3ed5d8a21b81"
+  },
+  "userId": {
+    "$oid": "6929735b92fe3ed5d8a21b80"
+  },
+  "balance": {
+    "THB": 75337,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0.5,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 65626,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:03:07.813Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:03:09.335Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6929735c92fe3ed5d8a21b83"
+  },
+  "userId": {
+    "$oid": "6929735c92fe3ed5d8a21b82"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:03:08.559Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:03:08.559Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6929737692fe3ed5d8a21b8e"
+  },
+  "userId": {
+    "$oid": "6929737692fe3ed5d8a21b8d"
+  },
+  "balance": {
+    "THB": 10000245.000000019,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:03:34.366Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:03:34.680Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6929737892fe3ed5d8a21bf4"
+  },
+  "userId": {
+    "$oid": "6929737892fe3ed5d8a21bf3"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:03:36.931Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:03:36.931Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69297ebfb7f93b1f4faabd6e"
+  },
+  "userId": {
+    "$oid": "69297ebeb7f93b1f4faabd6d"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:51:43.055Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:51:43.055Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69297ebfb7f93b1f4faabd70"
+  },
+  "userId": {
+    "$oid": "69297ebfb7f93b1f4faabd6f"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:51:43.227Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:51:43.227Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69297ebfb7f93b1f4faabd72"
+  },
+  "userId": {
+    "$oid": "69297ebfb7f93b1f4faabd71"
+  },
+  "balance": {
+    "THB": 75268,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0.5,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 65661,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:51:43.353Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:51:44.409Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69297ebfb7f93b1f4faabd74"
+  },
+  "userId": {
+    "$oid": "69297ebfb7f93b1f4faabd73"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:51:43.859Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:51:43.859Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69297ec1b7f93b1f4faabd7a"
+  },
+  "userId": {
+    "$oid": "69297ec1b7f93b1f4faabd79"
+  },
+  "balance": {
+    "THB": 10000614.999999944,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:51:45.223Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:51:45.957Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69297ec4b7f93b1f4faabde3"
+  },
+  "userId": {
+    "$oid": "69297ec4b7f93b1f4faabde2"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:51:48.467Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:51:48.467Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692980753eeed3ad010c0e2c"
+  },
+  "userId": {
+    "$oid": "692980753eeed3ad010c0e2b"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:59:01.962Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:59:01.962Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692980763eeed3ad010c0e2e"
+  },
+  "userId": {
+    "$oid": "692980763eeed3ad010c0e2d"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:59:02.072Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:59:02.072Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692980763eeed3ad010c0e30"
+  },
+  "userId": {
+    "$oid": "692980763eeed3ad010c0e2f"
+  },
+  "balance": {
+    "THB": 75277.5,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0.5,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 65642,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:59:02.187Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:59:03.219Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692980763eeed3ad010c0e32"
+  },
+  "userId": {
+    "$oid": "692980763eeed3ad010c0e31"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:59:02.681Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:59:02.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692980903eeed3ad010c0e37"
+  },
+  "userId": {
+    "$oid": "692980903eeed3ad010c0e36"
+  },
+  "balance": {
+    "THB": 10000000,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:59:28.061Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:59:28.071Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692980923eeed3ad010c0e39"
+  },
+  "userId": {
+    "$oid": "692980923eeed3ad010c0e38"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T10:59:30.503Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T10:59:30.503Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692982513eeed3ad010c0e46"
+  },
+  "userId": {
+    "$oid": "692982513eeed3ad010c0e45"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T11:06:57.323Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T11:06:57.323Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692982513eeed3ad010c0e48"
+  },
+  "userId": {
+    "$oid": "692982513eeed3ad010c0e47"
+  },
+  "balance": {
+    "THB": 10000640.000000037,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 13.128087191280873,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T11:06:57.911Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T11:06:58.293Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692982543eeed3ad010c0eae"
+  },
+  "userId": {
+    "$oid": "692982543eeed3ad010c0ead"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T11:07:00.459Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T11:07:00.459Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692982653eeed3ad010c0eb3"
+  },
+  "userId": {
+    "$oid": "692982653eeed3ad010c0eb2"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T11:07:17.401Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T11:07:17.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692982653eeed3ad010c0eb5"
+  },
+  "userId": {
+    "$oid": "692982653eeed3ad010c0eb4"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T11:07:17.484Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T11:07:17.484Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692982653eeed3ad010c0eb7"
+  },
+  "userId": {
+    "$oid": "692982653eeed3ad010c0eb6"
+  },
+  "balance": {
+    "THB": 75238.5,
+    "USD": 31.02699348433137
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0.5,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 65720,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T11:07:17.569Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T11:07:18.373Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692982653eeed3ad010c0eb9"
+  },
+  "userId": {
+    "$oid": "692982653eeed3ad010c0eb8"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-28T11:07:17.845Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T11:07:17.845Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac1d3414fae8817bc4c7e"
+  },
+  "userId": {
+    "$oid": "692ac1d3414fae8817bc4c7d"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T09:50:11.095Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T09:50:11.095Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac1d3414fae8817bc4c80"
+  },
+  "userId": {
+    "$oid": "692ac1d3414fae8817bc4c7f"
+  },
+  "balance": {
+    "THB": 10000009.999999963,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T09:50:11.691Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T09:50:12.003Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac1d6414fae8817bc4ce6"
+  },
+  "userId": {
+    "$oid": "692ac1d6414fae8817bc4ce5"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T09:50:14.283Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T09:50:14.283Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac1ff414fae8817bc4cec"
+  },
+  "userId": {
+    "$oid": "692ac1ff414fae8817bc4ceb"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T09:50:55.082Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T09:50:55.082Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac1ff414fae8817bc4cee"
+  },
+  "userId": {
+    "$oid": "692ac1ff414fae8817bc4ced"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T09:50:55.193Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T09:50:55.193Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac1ff414fae8817bc4cf0"
+  },
+  "userId": {
+    "$oid": "692ac1ff414fae8817bc4cef"
+  },
+  "balance": {
+    "THB": 74942.5,
+    "USD": 31.09452736318408
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0.5,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 66218,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T09:50:55.339Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T09:50:56.270Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac1ff414fae8817bc4cf2"
+  },
+  "userId": {
+    "$oid": "692ac1ff414fae8817bc4cf1"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T09:50:55.724Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T09:50:55.724Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac293414fae8817bc4cfa"
+  },
+  "userId": {
+    "$oid": "692ac293414fae8817bc4cf9"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T09:53:23.227Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T09:53:23.227Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac55c414fae8817bc4d07"
+  },
+  "userId": {
+    "$oid": "692ac55c414fae8817bc4d06"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T10:05:16.198Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T10:05:16.198Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac55c414fae8817bc4d09"
+  },
+  "userId": {
+    "$oid": "692ac55c414fae8817bc4d08"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T10:05:16.333Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T10:05:16.333Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac55c414fae8817bc4d0b"
+  },
+  "userId": {
+    "$oid": "692ac55c414fae8817bc4d0a"
+  },
+  "balance": {
+    "THB": 74942.5,
+    "USD": 31.09452736318408
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0.5,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 66218,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T10:05:16.456Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T10:05:17.399Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac55c414fae8817bc4d0d"
+  },
+  "userId": {
+    "$oid": "692ac55c414fae8817bc4d0c"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T10:05:16.850Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T10:05:16.850Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac576414fae8817bc4d13"
+  },
+  "userId": {
+    "$oid": "692ac576414fae8817bc4d12"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T10:05:42.274Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T10:05:42.274Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac576414fae8817bc4d15"
+  },
+  "userId": {
+    "$oid": "692ac576414fae8817bc4d14"
+  },
+  "balance": {
+    "THB": 10000009.999999963,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 1000,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 13.268273172682731,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T10:05:42.931Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T10:05:44.003Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "692ac57a414fae8817bc4d7b"
+  },
+  "userId": {
+    "$oid": "692ac57a414fae8817bc4d7a"
+  },
+  "balance": {
+    "THB": 0,
+    "USD": 0
+  },
+  "goldHoldings": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "averageCosts": {
+    "SPOT": 0,
+    "GOLD_9999": 0,
+    "GOLD_965": 0,
+    "GOLD_9999_MTS": 0,
+    "GOLD_965_MTS": 0,
+    "GOLD_965_ASSO": 0
+  },
+  "createdAt": {
+    "$date": "2025-11-29T10:05:46.407Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-29T10:05:46.407Z"
+  }
+}]

@@ -20,9 +20,9 @@ npm run setup-db
 
 # How to import the sample data (optional):
 1. Open MongoDB Compass
-2. Select or create your database
+2. Copy folder `data` on Project
 3. Open the Collections tab
-4. Select the target collection (or create a new one with the same name)
+4. Select file in folder data to Import Data
 5. Click Import Data
 6. Choose the corresponding JSON file from the data/ folder
 7. Importing the test data is optional.

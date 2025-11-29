@@ -1,0 +1,63 @@
+[{
+  "_id": {
+    "$oid": "691fed1c220d9d0d23dc0f00"
+  },
+  "goldType": "GOLD_965",
+  "buyIn": 0,
+  "lastUpdated": {
+    "$date": "2025-11-29T10:05:52.684Z"
+  },
+  "sellOut": 0,
+  "source": "MTS",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "691fed1c220d9d0d23dc0f01"
+  },
+  "goldType": "GOLD_9999",
+  "buyIn": 0,
+  "lastUpdated": {
+    "$date": "2025-11-29T10:05:50.070Z"
+  },
+  "sellOut": 0,
+  "source": "MTS",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "691fed1c220d9d0d23dc0f02"
+  },
+  "goldType": "SPOT",
+  "lastUpdated": {
+    "$date": "2025-11-29T10:05:47.455Z"
+  },
+  "price": 0,
+  "source": "SPOT",
+  "buyIn": 0,
+  "sellOut": 0
+},
+{
+  "_id": {
+    "$oid": "69242e3a220d9d0d23dc0f06"
+  },
+  "goldType": "GOLD_965_MTS",
+  "buyIn": 0,
+  "lastUpdated": {
+    "$date": "2025-11-27T10:51:06.527Z"
+  },
+  "price": 0,
+  "sellOut": 0
+},
+{
+  "_id": {
+    "$oid": "69296945ed195d5f158c4d10"
+  },
+  "goldType": "GOLD_9999_MTS",
+  "buyIn": 0,
+  "lastUpdated": {
+    "$date": "2025-11-29T10:05:20.498Z"
+  },
+  "price": 0,
+  "sellOut": 0
+}]

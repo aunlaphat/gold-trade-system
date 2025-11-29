@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "691fed18220d9d0d23dc0efd"
+  },
+  "goldType": "SPOT",
+  "lastUpdated": {
+    "$date": "2025-11-29T10:05:48.997Z"
+  },
+  "status": "ONLINE"
+},
+{
+  "_id": {
+    "$oid": "691fed18220d9d0d23dc0efe"
+  },
+  "goldType": "GOLD_9999",
+  "lastUpdated": {
+    "$date": "2025-11-29T10:05:51.608Z"
+  },
+  "status": "ONLINE"
+},
+{
+  "_id": {
+    "$oid": "691fed18220d9d0d23dc0eff"
+  },
+  "goldType": "GOLD_965",
+  "lastUpdated": {
+    "$date": "2025-11-29T10:05:54.223Z"
+  },
+  "status": "ONLINE"
+},
+{
+  "_id": {
+    "$oid": "69231d71220d9d0d23dc0f03"
+  },
+  "goldType": "GOLD_9999_MTS",
+  "lastUpdated": {
+    "$date": "2025-11-29T10:05:21.511Z"
+  },
+  "status": "ONLINE"
+},
+{
+  "_id": {
+    "$oid": "69231d71220d9d0d23dc0f04"
+  },
+  "goldType": "GOLD_965_MTS",
+  "lastUpdated": {
+    "$date": "2025-11-28T09:02:57.318Z"
+  },
+  "status": "ONLINE"
+},
+{
+  "_id": {
+    "$oid": "69231d71220d9d0d23dc0f05"
+  },
+  "goldType": "GOLD_965_ASSO",
+  "lastUpdated": {
+    "$date": "2025-11-26T15:29:22.245Z"
+  },
+  "status": "ONLINE"
+}]
