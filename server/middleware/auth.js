@@ -1,15 +1,23 @@
 import jwt from "jsonwebtoken"
+import { config } from "../config/env.js"
+import { AppError } from "./errorHandler.js"
+import logger from "../utils/logger.js"
 
-const JWT_SECRET = process.env.JWT_SECRET || "your-secret-key-change-in-production"
+const JWT_SECRET = config.jwt.secret
 
 export function generateToken(userId, role = "user") {
-  return jwt.sign({ userId, role }, JWT_SECRET, { expiresIn: "1h" }) // Token expires in 1 hour
+  return jwt.sign({ userId, role }, JWT_SECRET, { expiresIn: config.jwt.expiresIn })
+}
+
+export function generateRefreshToken(userId, role = "user") {
+  return jwt.sign({ userId, role }, JWT_SECRET, { expiresIn: config.jwt.refreshExpiresIn })
 }
 
 export function verifyToken(token) {
   try {
     return jwt.verify(token, JWT_SECRET)
   } catch (error) {
+    logger.warn("Token verification failed", { error: error.message })
     return null
   }
 }
@@ -19,28 +27,27 @@ export async function authMiddleware(req, res, next) {
     const authHeader = req.headers.authorization
 
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
-      return res.status(401).json({ error: "No token provided" })
+      throw new AppError("No token provided", 401)
     }
 
     const token = authHeader.substring(7)
     const decoded = verifyToken(token)
 
     if (!decoded) {
-      return res.status(401).json({ error: "Invalid token" })
+      throw new AppError("Invalid or expired token", 401)
     }
 
     req.userId = decoded.userId
-    req.userRole = decoded.role // Attach user role to request
+    req.userRole = decoded.role
     next()
   } catch (error) {
-    console.error("Auth middleware error:", error)
-    res.status(401).json({ error: "Authentication failed" })
+    next(error)
   }
 }
 
 export function adminAuthMiddleware(req, res, next) {
   if (req.userRole !== "admin") {
-    return res.status(403).json({ error: "Access denied: Admin privileges required" })
+    throw new AppError("Access denied: Admin privileges required", 403)
   }
   next()
 }

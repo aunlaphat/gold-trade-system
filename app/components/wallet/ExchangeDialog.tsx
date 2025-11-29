@@ -161,7 +161,7 @@ export function ExchangeDialog({
         <DialogHeader>
           <DialogTitle>Exchange Currency</DialogTitle>
           <DialogDescription>
-            Convert between THB and USD. Current balances: THB {thbBalance.toFixed(2)}, USD {usdBalance.toFixed(2)}.
+            Exchange rates are updated every hour and may not reflect real-time market prices.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">

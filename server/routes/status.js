@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
     const statuses = await GoldStatus.getAllStatuses()
     res.json(statuses)
   } catch (error) {
-    console.error("[v0] Get statuses error:", error)
+    console.error("Get statuses error:", error)
     res.status(500).json({ error: "Failed to get statuses" })
   }
 })
@@ -39,7 +39,7 @@ router.put("/:goldType", async (req, res) => {
 
     res.json({ success: true, goldType, status })
   } catch (error) {
-    console.error("[v0] Update status error:", error)
+    console.error("Update status error:", error)
     res.status(500).json({ error: "Failed to update status" })
   }
 })

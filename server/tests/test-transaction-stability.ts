@@ -13,6 +13,65 @@ interface TransactionTestResult {
   error?: string
 }
 
+// ─────────────────────────────────────────────
+// 1) สร้าง admin เพื่อใช้ตั้งสถานะ GOLD_9999 = ONLINE
+// ─────────────────────────────────────────────
+async function getAdminToken(): Promise<string | null> {
+  try {
+    const timestamp = Date.now()
+    const response = await fetch(`${API_URL}/api/auth/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: `admintx${timestamp}@test.com`,
+        username: `admintx${timestamp}`,
+        password: "admin123456",
+        role: "admin", // ให้เป็น admin
+      }),
+    })
+
+    if (!response.ok) {
+      console.error("getAdminToken: register admin failed", await response.text())
+      return null
+    }
+
+    const data = await response.json()
+    return data.token ?? null
+  } catch (error) {
+    console.error("Failed to get admin token:", error)
+    return null
+  }
+}
+
+// ตั้งสถานะ GOLD_9999 (และ/หรือ GOLD_9999_MTS) ให้เป็น ONLINE ก่อนเทส
+async function ensureGoldOnline(adminToken: string): Promise<void> {
+  const headers = {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${adminToken}`,
+  }
+
+  // gold type หลักที่ TC-002 ใช้คือ GOLD_9999
+  const goldTypes = ["GOLD_9999"]
+
+  for (const goldType of goldTypes) {
+    const resp = await fetch(`${API_URL}/api/admin/status/${goldType}`, {
+      method: "PUT",
+      headers,
+      body: JSON.stringify({ status: "ONLINE" }),
+    })
+
+    if (!resp.ok) {
+      const body = await resp.text()
+      console.warn(`ensureGoldOnline: failed to set ${goldType} ONLINE`, resp.status, body)
+    } else {
+      console.log(`ensureGoldOnline: ${goldType} set to ONLINE`)
+    }
+  }
+}
+
+// ─────────────────────────────────────────────
+// 2) สร้าง user ธรรมดา + เติมเงิน/ทอง ให้เทรดได้
+// ─────────────────────────────────────────────
 async function createTestUserWithBalance(): Promise<string | null> {
   try {
     // Create test user
@@ -27,17 +86,37 @@ async function createTestUserWithBalance(): Promise<string | null> {
       }),
     })
 
-    const data = await response.json()
-    const token = data.token
+    if (!response.ok) {
+      console.error("createTestUserWithBalance: register failed", await response.text())
+      return null
+    }
 
-    // Add balance to wallet
+    const data = await response.json()
+    const token = data.token as string | undefined
+
+    if (!token) {
+      console.error("createTestUserWithBalance: no token returned")
+      return null
+    }
+
+    // Add THB balance to wallet
     await fetch(`${API_URL}/api/wallet/deposit`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ amount: 10000000 }), // 10M THB for testing
+      body: JSON.stringify({ amount: 10_000_000, currency: "THB" }), // 10M THB
+    })
+
+    // เติม GOLD_9999 เพิ่มให้พอขายได้
+    await fetch(`${API_URL}/api/wallet/deposit`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ amount: 1000, currency: "GOLD_9999" }),
     })
 
     return token
@@ -47,6 +126,9 @@ async function createTestUserWithBalance(): Promise<string | null> {
   }
 }
 
+// ─────────────────────────────────────────────
+// 3) ยิง 1 transaction (BUY/SELL)
+// ─────────────────────────────────────────────
 async function executeTransaction(token: string, transactionId: number): Promise<TransactionTestResult> {
   const startTime = Date.now()
 
@@ -60,7 +142,8 @@ async function executeTransaction(token: string, transactionId: number): Promise
       body: JSON.stringify({
         goldType: "GOLD_9999",
         action: transactionId % 2 === 0 ? "BUY" : "SELL",
-        amount: 0.1, // Small amount for testing
+        amount: 0.1, // เล็ก ๆ พอ
+        currency: "THB",
       }),
     })
 
@@ -85,10 +168,26 @@ async function executeTransaction(token: string, transactionId: number): Promise
   }
 }
 
+// ─────────────────────────────────────────────
+// 4) main: runTransactionStabilityTest
+// ─────────────────────────────────────────────
 async function runTransactionStabilityTest(transactionCount = 100) {
   console.log(`\nTC-002: Starting Transaction Stability Test with ${transactionCount} transactions...\n`)
 
-  // Create test user with sufficient balance
+  // 4.1 สร้าง admin เพื่อ online สถานะ GOLD_9999
+  console.log("Creating admin user to set GOLD_9999 ONLINE...")
+  const adminToken = await getAdminToken()
+  if (!adminToken) {
+    console.error("❌ Failed to create admin user")
+    return { passed: false }
+  }
+
+  await ensureGoldOnline(adminToken)
+
+  // เผื่อมี delay เล็กน้อย (เช่น cache, background update)
+  await new Promise((resolve) => setTimeout(resolve, 500))
+
+  // 4.2 สร้าง user ที่จะใช้งานเทรด
   console.log("Creating test user with balance...")
   const token = await createTestUserWithBalance()
 
@@ -102,7 +201,9 @@ async function runTransactionStabilityTest(transactionCount = 100) {
   const startTime = Date.now()
 
   // Execute transactions concurrently
-  const transactionPromises = Array.from({ length: transactionCount }, (_, i) => executeTransaction(token, i + 1))
+  const transactionPromises = Array.from({ length: transactionCount }, (_, i) =>
+    executeTransaction(token, i + 1),
+  )
 
   const results = await Promise.all(transactionPromises)
 
@@ -123,7 +224,6 @@ async function runTransactionStabilityTest(transactionCount = 100) {
   console.log(`Status: ${successCount >= transactionCount * 0.95 ? "✅ PASS" : "❌ FAIL"}`)
   console.log("=".repeat(60))
 
-  // Show failed transactions if any
   if (failCount > 0) {
     console.log("\nFailed Transactions:")
     results

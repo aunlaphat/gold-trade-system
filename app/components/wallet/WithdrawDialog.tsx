@@ -47,7 +47,7 @@ export function WithdrawDialog({ open, onOpenChange, onSuccess, maxAmount }: Wit
 
     setIsLoading(true)
     try {
-      await apiClient.withdraw(withdrawAmount)
+      await apiClient.withdraw(withdrawAmount, "THB")
 
       toast({
         title: "Withdrawal successful",

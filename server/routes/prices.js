@@ -1,6 +1,7 @@
 import express from "express"
 import { goldPriceService } from "../services/goldPriceService.js"
 import { connectDatabase, getDatabase } from "../config/database.js"
+import { GoldStatus } from "../models/GoldStatus.js"
 
 const router = express.Router()
 
@@ -15,7 +16,9 @@ router.get("/stream", (req, res) => {
   if (res.flushHeaders) res.flushHeaders()
   // send a ping every 15s to keep connection alive (optional)
   const keepAlive = setInterval(() => {
-    try { res.write(":keepalive\n\n") } catch (e) {}
+    try {
+      res.write(":keepalive\n\n")
+    } catch (e) {}
   }, 15000)
 
   const send = (data) => {
@@ -31,7 +34,9 @@ router.get("/stream", (req, res) => {
   req.on("close", () => {
     unsubscribe()
     clearInterval(keepAlive)
-    try { res.end() } catch (e) {}
+    try {
+      res.end()
+    } catch (e) {}
   })
 })
 
@@ -42,7 +47,7 @@ router.get("/history", async (req, res) => {
     const db = getDatabase()
     const coll = db.collection("gold_price_history")
 
-    const limit = Math.min(parseInt(req.query.limit || "500", 10) || 500, 5000)
+    const limit = Math.min(Number.parseInt(req.query.limit || "500", 10) || 500, 5000)
     const q = {}
     if (req.query.from) {
       const fromTs = new Date(Number(req.query.from) * 1000)
@@ -59,8 +64,12 @@ router.get("/history", async (req, res) => {
     const items = docs.reverse().map((d) => {
       const date = d.ts || (d._id && typeof d._id.getTimestamp === "function" ? d._id.getTimestamp() : d.ts)
       return {
-        ts: date ? (date instanceof Date ? date.toISOString() : new Date(date).toISOString()) : new Date().toISOString(),
-        payload: d.payload || d
+        ts: date
+          ? date instanceof Date
+            ? date.toISOString()
+            : new Date(date).toISOString()
+          : new Date().toISOString(),
+        payload: d.payload || d,
       }
     })
     return res.json(items)
@@ -78,7 +87,7 @@ router.get("/history/:goldType", async (req, res) => {
     const coll = db.collection("gold_price_history")
 
     const goldType = (req.params.goldType || "").toLowerCase()
-    const limit = Math.min(parseInt(req.query.limit || "1000", 10) || 1000, 5000)
+    const limit = Math.min(Number.parseInt(req.query.limit || "1000", 10) || 1000, 5000)
 
     const docs = await coll.find({}).sort({ ts: -1 }).limit(limit).toArray()
     docs.reverse()
@@ -102,23 +111,41 @@ router.get("/history/:goldType", async (req, res) => {
         case "gold_965_asso":
         case "gold965_asso":
         case "asso":
-          return payload.gold965_asso?.price ?? payload.gold965_asso?.buyIn ?? payload.gold965_asso?.sellOut ?? null
+          return (
+            payload.gold965_asso?.price ??
+            payload.gold965_asso?.buyIn ??
+            payload.gold965_asso?.sellOut ??
+            payload.gold965_asso ??
+            null
+          )
         case "gold_965":
         case "gold965":
           return payload.gold965?.price ?? payload.gold965?.buyIn ?? payload.gold965?.sellOut ?? null
         default:
-          return payload[goldType]?.price ?? payload[goldType]?.buyIn ?? payload[goldType]?.sellOut ?? payload[goldType] ?? null
+          return (
+            payload[goldType]?.price ??
+            payload[goldType]?.buyIn ??
+            payload[goldType]?.sellOut ??
+            payload[goldType] ??
+            null
+          )
       }
     }
 
-    const items = docs.map(d => {
-      const date = d.ts || (d._id && typeof d._id.getTimestamp === "function" ? d._id.getTimestamp() : d.ts)
-      const tsIso = date ? (date instanceof Date ? date.toISOString() : new Date(date).toISOString()) : new Date().toISOString()
-      return {
-        ts: tsIso,
-        value: mapValue(d.payload)
-      }
-    }).filter(it => it.value != null)
+    const items = docs
+      .map((d) => {
+        const date = d.ts || (d._id && typeof d._id.getTimestamp === "function" ? d._id.getTimestamp() : d.ts)
+        const tsIso = date
+          ? date instanceof Date
+            ? date.toISOString()
+            : new Date(date).toISOString()
+          : new Date().toISOString()
+        return {
+          ts: tsIso,
+          value: mapValue(d.payload),
+        }
+      })
+      .filter((it) => it.value != null)
 
     return res.json(items)
   } catch (e) {
@@ -128,11 +155,33 @@ router.get("/history/:goldType", async (req, res) => {
 })
 
 // GET /api/prices/current  -> return last known prices quickly
-router.get("/current", (req, res) => {
+router.get("/current", async (req, res) => {
   try {
     const last = goldPriceService.lastPrices || null
     if (!last) return res.status(204).end()
-    return res.json(last)
+
+    // Apply additional status check to ensure STOP prices are 0
+    const allStatuses = await GoldStatus.getAllStatuses()
+    const statusMap = new Map(allStatuses.map((s) => [s.goldType, s.status]))
+
+    const controlledPrices = { ...last }
+    for (const goldTypeKey in controlledPrices) {
+      if (goldTypeKey === "timestamp") continue
+
+      const goldType = goldTypeKey.toUpperCase().replace(/_MTS|_ASSO|_THAI/g, "")
+      const status = statusMap.get(goldType)
+
+      if (status === "STOP") {
+        controlledPrices[goldTypeKey] = {
+          buyIn: 0,
+          sellOut: 0,
+          price: 0,
+          source: "STOPPED",
+        }
+      }
+    }
+
+    return res.json(controlledPrices)
   } catch (e) {
     console.error("/api/prices/current error:", e)
     return res.status(500).json({ error: "Current Prices Error", details: e.message })

@@ -1,6 +1,7 @@
+// server/routes/trading.js
 import express from "express"
 import { Transaction } from "../models/Transaction.js"
-import { getDatabase, getClient, connectDatabase } from "../config/database.js"
+import { getDatabase } from "../config/database.js"
 import { authMiddleware } from "../middleware/auth.js"
 import { GoldStatus } from "../models/GoldStatus.js"
 import { goldPriceService } from "../services/goldPriceService.js"
@@ -8,15 +9,24 @@ import { exchangeRateService } from "../services/exchangeRateService.js"
 
 const router = express.Router()
 
+// ─────────────────────────────────────────────
+// POST /api/trading/execute  (หลัก ๆ ที่เราแก้)
+// ─────────────────────────────────────────────
 router.post("/execute", authMiddleware, async (req, res) => {
   const { ObjectId } = await import("mongodb")
   const userId = new ObjectId(req.userId)
   const { goldType, action, amount, currency: tradeCurrency } = req.body
-  console.log(`[Trading] User ${userId} attempting to ${action} ${amount} of ${goldType} using ${tradeCurrency}.`)
+
+  console.log(
+    `[Trading] User ${userId} attempting to ${action} ${amount} of ${goldType} using ${tradeCurrency}.`
+  )
 
   try {
+    // 0) validate input
     if (!goldType || !action || !amount || !tradeCurrency) {
-      console.warn(`[Trading] Missing required fields for user ${userId}. Body: ${JSON.stringify(req.body)}`)
+      console.warn(
+        `[Trading] Missing required fields for user ${userId}. Body: ${JSON.stringify(req.body)}`
+      )
       return res.status(400).json({ error: "Trade Error", details: "Missing required fields" })
     }
 
@@ -30,7 +40,7 @@ router.post("/execute", authMiddleware, async (req, res) => {
       return res.status(400).json({ error: "Trade Error", details: "Amount must be greater than 0" })
     }
 
-    // 1. Check gold type status
+    // 1) check gold status
     const status = await GoldStatus.getStatus(goldType)
     if (!status) {
       console.warn(`[Trading] Gold type ${goldType} not found for user ${userId}.`)
@@ -46,9 +56,10 @@ router.post("/execute", authMiddleware, async (req, res) => {
       console.warn(`[Trading] Trading is paused for ${goldType} for user ${userId}.`)
       return res.status(400).json({ error: "Trade Error", details: "Trading is paused for this gold type" })
     }
+
     console.log(`[Trading] Gold status for ${goldType} is ${status.status}.`)
 
-    // 2. Get latest price from goldPriceService
+    // 2) get latest prices
     const latestPrices = goldPriceService.lastPrices
     if (!latestPrices) {
       console.error(`[Trading] Price data not available for user ${userId}.`)
@@ -72,100 +83,176 @@ router.post("/execute", authMiddleware, async (req, res) => {
 
     const priceData = latestPrices[priceKey]
     if (!priceData) {
-      console.error(`[Trading] Price data not found for priceKey ${priceKey} for user ${userId}.`)
+      console.error(
+        `[Trading] Price data not found for priceKey ${priceKey} for user ${userId}.`
+      )
       return res.status(400).json({ error: "Trade Error", details: "Price not available for this gold type" })
     }
 
-    const price = action === "BUY" ? priceData.buyIn : priceData.sellOut
-    if (!price || price <= 0) {
-      console.error(`[Trading] Price not available for ${action} ${goldType} for user ${userId}. PriceData: ${JSON.stringify(priceData)}.`)
+    // 2.1 base currency ของทอง (ให้ match กับ frontend)
+    const getBaseCurrency = (type) => {
+      // ปรับ logic ได้ตามจริง ถ้าคุณกำหนดอื่น
+      if (type === "SPOT") return "USD"
+      return "THB"
+    }
+
+    const baseCurrency = getBaseCurrency(goldType) // "THB" หรือ "USD"
+
+    // 2.2 ราคาใน base currency
+    const priceBase = action === "BUY" ? priceData.buyIn : priceData.sellOut
+    if (!priceBase || priceBase <= 0) {
+      console.error(
+        `[Trading] Price not available for ${action} ${goldType} for user ${userId}. PriceData: ${JSON.stringify(
+          priceData
+        )}.`
+      )
       return res.status(400).json({ error: "Trade Error", details: "Price not available" })
     }
-    const totalCost = price * amount
-    console.log(`[Trading] Price for ${action} ${goldType}: ${price}. Total cost: ${totalCost}.`)
 
-    // 3. Determine currency needed
-    const currency = tradeCurrency
-    console.log(`[Trading] Gold type ${goldType} trade will use currency: ${currency}.`)
+    // 3) currency ที่ใช้เทรด (มาจาก client)
+    const currency = tradeCurrency // "THB" หรือ "USD"
+    console.log(
+      `[Trading] Gold type ${goldType} trade will use currency: ${currency}. BaseCurrency: ${baseCurrency}.`
+    )
 
-    // 4. Get wallet
+    // 3.1 แปลงราคาไปสกุลที่เทรดจริง
+    let priceTrade
+
+    if (baseCurrency === currency) {
+      // ไม่ต้องแปลง
+      priceTrade = priceBase
+    } else {
+      // ต้องแปลง THB <-> USD
+      const rates = exchangeRateService.lastRates
+      const usdThb = rates && rates.USD // 1 USD = usdThb THB เช่น 36.50
+
+      if (!usdThb || usdThb <= 0) {
+        console.error(`[Trading] Exchange rate not available for user ${userId}.`)
+        return res.status(400).json({ error: "Trade Error", details: "Exchange rate not available" })
+      }
+
+      const convert = (value, from, to) => {
+        if (from === to) return value
+        if (from === "THB" && to === "USD") return value / usdThb
+        if (from === "USD" && to === "THB") return value * usdThb
+        throw new Error(`Unsupported currency conversion: ${from} -> ${to}`)
+      }
+
+      priceTrade = convert(priceBase, baseCurrency, currency)
+    }
+
+    const totalCost = priceTrade * amount
+
+    console.log(
+      `[Trading] Price for ${action} ${goldType}: base=${priceBase} ${baseCurrency}, trade=${priceTrade} ${currency}, total=${totalCost} ${currency}.`
+    )
+
+    // 4) wallet
     const wallet = await getDatabase().collection("wallets").findOne({ userId })
     if (!wallet) {
       console.warn(`[Trading] Wallet not found for user ${userId}.`)
       return res.status(404).json({ error: "Trade Error", details: "Wallet not found" })
     }
 
-    const balance = typeof wallet.balance === "number"
-      ? { THB: wallet.balance, USD: 0 }
-      : wallet.balance || { THB: 0, USD: 0 }
-    console.log(`[Trading] User ${userId} wallet balances: THB ${balance.THB}, USD ${balance.USD}. Gold holdings: ${JSON.stringify(wallet.goldHoldings)}.`)
+    const balance =
+      typeof wallet.balance === "number"
+        ? { THB: wallet.balance, USD: 0 }
+        : wallet.balance || { THB: 0, USD: 0 }
 
-    // 5. Check balance/holdings
+    const currentHoldings = (wallet.goldHoldings && wallet.goldHoldings[goldType]) || 0
+    const currentAverageCost =
+      (wallet.averageCosts && wallet.averageCosts[goldType]) || 0
+
+    console.log(
+      `[Trading] User ${userId} wallet balances: THB ${balance.THB}, USD ${balance.USD}. Gold holdings: ${JSON.stringify(
+        wallet.goldHoldings
+      )}.`
+    )
+
+    // 5) check balance / holdings
     if (action === "BUY") {
-      if (balance[currency] < totalCost) {
-        console.warn(`[Trading] Insufficient ${currency} balance for user ${userId}. Required: ${totalCost}, Available: ${balance[currency]}.`)
-        return res.status(400).json({ 
+      if ((balance[currency] || 0) < totalCost) {
+        console.warn(
+          `[Trading] Insufficient ${currency} balance for user ${userId}. Required: ${totalCost}, Available: ${
+            balance[currency] || 0
+          }.`
+        )
+        return res.status(400).json({
           error: "Trade Error",
-          details: `Insufficient ${currency} balance. Required: ${totalCost.toFixed(2)}, Available: ${balance[currency].toFixed(2)}`,
+          details: `Insufficient ${currency} balance. Required: ${totalCost.toFixed(
+            2
+          )}, Available: ${(balance[currency] || 0).toFixed(2)}`,
         })
       }
       console.log(`[Trading] User ${userId} has sufficient ${currency} balance for BUY.`)
-    } else { // SELL
-      const currentHoldings = wallet.goldHoldings?.[goldType] || 0
+    } else {
       if (currentHoldings < amount) {
-        console.warn(`[Trading] Insufficient ${goldType} holdings for user ${userId}. Required: ${amount}, Available: ${currentHoldings}.`)
-        return res.status(400).json({ 
+        console.warn(
+          `[Trading] Insufficient ${goldType} holdings for user ${userId}. Required: ${amount}, Available: ${currentHoldings}.`
+        )
+        return res.status(400).json({
           error: "Trade Error",
-          details: `Insufficient ${goldType} holdings. Required: ${amount.toFixed(4)}, Available: ${currentHoldings.toFixed(4)}`,
+          details: `Insufficient ${goldType} holdings. Required: ${amount.toFixed(
+            4
+          )}, Available: ${currentHoldings.toFixed(4)}`,
         })
       }
       console.log(`[Trading] User ${userId} has sufficient ${goldType} holdings for SELL.`)
     }
 
-    // 6. Create transaction record
+    // 6) create transaction record (ใช้ราคา / totalCost ใน currency ที่เทรดจริง)
     const transaction = await Transaction.create({
       userId,
       goldType,
       action,
       amount,
-      price,
+      price: priceTrade,
       totalCost,
       currency,
       status: "PENDING",
     })
+
     console.log(`[Trading] Transaction created with ID: ${transaction._id}. Status: PENDING.`)
 
-    // 7. Update wallet
+    // 7) update wallet
     const updateOps = {
       $set: { updatedAt: new Date() },
     }
-
-    const currentHoldings = wallet.goldHoldings?.[goldType] || 0
-    const currentAverageCost = wallet.averageCosts?.[goldType] || 0
 
     if (action === "BUY") {
       updateOps.$inc = {
         [`balance.${currency}`]: -totalCost,
         [`goldHoldings.${goldType}`]: amount,
       }
-      // Recalculate average cost for BUY transactions
+
+      // averageCost เก็บเป็น baseCurrency
       const newTotalHoldings = currentHoldings + amount
-      const newAverageCost = newTotalHoldings > 0
-        ? ((currentAverageCost * currentHoldings) + (price * amount)) / newTotalHoldings
-        : 0 // If holdings become 0, average cost is 0
+      const newAverageCost =
+        newTotalHoldings > 0
+          ? (currentAverageCost * currentHoldings + priceBase * amount) / newTotalHoldings
+          : 0
+
       updateOps.$set[`averageCosts.${goldType}`] = newAverageCost
-      console.log(`[Trading] BUY operation: Decreasing ${currency} by ${totalCost}, Increasing ${goldType} by ${amount}. New average cost: ${newAverageCost}.`)
-    } else { // SELL
+
+      console.log(
+        `[Trading] BUY: -${totalCost} ${currency}, +${amount} ${goldType}. New avgCost(${baseCurrency})=${newAverageCost}.`
+      )
+    } else {
       updateOps.$inc = {
         [`balance.${currency}`]: totalCost,
         [`goldHoldings.${goldType}`]: -amount,
       }
-      // Average cost remains the same for SELL transactions (cost of remaining units)
-      // If holdings become 0, average cost should be reset to 0
+
       if (currentHoldings - amount <= 0) {
         updateOps.$set[`averageCosts.${goldType}`] = 0
+      } else {
+        // คง avg cost เดิม
+        updateOps.$set[`averageCosts.${goldType}`] = currentAverageCost
       }
-      console.log(`[Trading] SELL operation: Increasing ${currency} by ${totalCost}, Decreasing ${goldType} by ${amount}.`)
+
+      console.log(
+        `[Trading] SELL: +${totalCost} ${currency}, -${amount} ${goldType}. Holdings after=${currentHoldings - amount}.`
+      )
     }
 
     const updateResult = await getDatabase().collection("wallets").updateOne({ userId }, updateOps)
@@ -173,28 +260,35 @@ router.post("/execute", authMiddleware, async (req, res) => {
       console.error(`[Trading] Wallet update failed for user ${userId}. Document not modified.`)
       return res.status(500).json({ error: "Trade Failed", details: "Wallet update issue." })
     }
+
     console.log(`[Trading] Wallet updated for user ${userId}.`)
 
-    // 8. Update transaction status
+    // 8) update transaction status
     await Transaction.updateStatus(transaction._id, "COMPLETED")
     console.log(`[Trading] Transaction ${transaction._id} status updated to COMPLETED.`)
 
     const updatedWallet = await getDatabase().collection("wallets").findOne({ userId })
 
-    res.json({ 
-      success: true, 
+    res.json({
+      success: true,
       transaction,
       wallet: updatedWallet,
     })
   } catch (error) {
-    console.error(`[Trading] Trade execution error for user ${req.userId}:`, error.message, error.stack)
+    console.error(
+      `[Trading] Trade execution error for user ${req.userId}:`,
+      error && error.message,
+      error && error.stack
+    )
     res.status(500).json({ error: "Trade execution failed", details: error.message })
   } finally {
     console.log(`[Trading] Trade operation finished for user ${userId}.`)
   }
 })
 
-// Get user transactions
+// ─────────────────────────────────────────────
+// GET /api/trading/history
+// ─────────────────────────────────────────────
 router.get("/history", authMiddleware, async (req, res) => {
   try {
     const transactions = await Transaction.findByUserId(req.userId)
@@ -205,7 +299,9 @@ router.get("/history", authMiddleware, async (req, res) => {
   }
 })
 
-// Bulk trade execution (for testing concurrent transactions)
+// ─────────────────────────────────────────────
+// POST /api/trading/execute-bulk  (ของเดิม แทบไม่ต้องยุ่ง)
+// ─────────────────────────────────────────────
 router.post("/execute-bulk", authMiddleware, async (req, res) => {
   try {
     const { trades } = req.body
@@ -221,25 +317,33 @@ router.post("/execute-bulk", authMiddleware, async (req, res) => {
     for (const trade of trades) {
       const { goldType, action, amount, price } = trade
       if (!goldType || !action || !amount || amount <= 0 || !price || price <= 0) {
-        console.warn(`[Trading] Invalid trade in bulk operation for user ${userId}: ${JSON.stringify(trade)}. Skipping.`)
-        continue // Skip invalid trade data
+        console.warn(
+          `[Trading] Invalid trade in bulk operation for user ${userId}: ${JSON.stringify(
+            trade
+          )}. Skipping.`
+        )
+        continue
       }
 
       const status = await GoldStatus.getStatus(goldType)
       if (!status) {
-        console.warn(`[Trading] Gold type ${goldType} not found in bulk operation for user ${userId}. Skipping.`)
+        console.warn(
+          `[Trading] Gold type ${goldType} not found in bulk operation for user ${userId}. Skipping.`
+        )
         continue
       }
 
       if (status.status === "STOP") {
-        console.warn(`[Trading] Trading is stopped for ${goldType} in bulk operation for user ${userId}. Skipping.`)
-        // Optionally, you could return an error for the entire bulk operation here
-        // For now, we'll just skip it.
+        console.warn(
+          `[Trading] Trading is stopped for ${goldType} in bulk operation for user ${userId}. Skipping.`
+        )
         continue
       }
 
       if (status.status === "PAUSE") {
-        console.warn(`[Trading] Trading is paused for ${goldType} in bulk operation for user ${userId}. Skipping.`)
+        console.warn(
+          `[Trading] Trading is paused for ${goldType} in bulk operation for user ${userId}. Skipping.`
+        )
         continue
       }
 
@@ -250,7 +354,7 @@ router.post("/execute-bulk", authMiddleware, async (req, res) => {
         amount,
         price,
         totalCost: price * amount,
-        currency: trade.currency || "THB", // Assume THB if not provided for bulk
+        currency: trade.currency || "THB",
         status: "PENDING",
       })
     }

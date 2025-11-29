@@ -29,8 +29,6 @@ npm run dev
 Access the application:
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:5000
-- Admin Panel: http://localhost:3000/admin
-- Test Suite: http://localhost:3000/test
 
 ---
 

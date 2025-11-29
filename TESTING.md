@@ -37,6 +37,8 @@ Before running tests, ensure:
 
 **How to run**:
 \`\`\`bash
+npm install -D tsx //ลงในเครื่องก่อนเพื่อใช้คำสั่งไฟล์เทสได้
+
 # Default: 100 users
 npm run test:concurrent
 

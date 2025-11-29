@@ -24,17 +24,7 @@ export const metadata: Metadata = {
   title: "Gold Trading System - Real-Time Trading",
   description: "Professional real-time gold trading platform with live prices and charts",
   icons: {
-    icon: [
-      {
-        url: "/logo-system.jpg",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/logo-system.jpg",
-        media: "(prefers-color-scheme: dark)",
-      },
-    ],
-    apple: "/logo-system.jpg",
+    icon: "/favicon.ico",
   },
 }
 

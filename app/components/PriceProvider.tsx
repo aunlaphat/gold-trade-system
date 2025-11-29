@@ -1,19 +1,18 @@
 "use client"
-import React, { createContext, useContext, useEffect, useState } from "react"
+import type React from "react"
+import { createContext, useContext, useEffect, useState } from "react"
+import { API_CONFIG } from "../lib/config"
+
 const PriceContext = createContext<any>(null)
-export function usePrices() { return useContext(PriceContext) }
+export function usePrices() {
+  return useContext(PriceContext)
+}
 
 export default function PriceProvider({ children }: { children: React.ReactNode }) {
   const [prices, setPrices] = useState<any>(null)
 
   useEffect(() => {
-    const envBase = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "")
-    let base = envBase
-    if (!base && typeof window !== "undefined") {
-      const host = window.location.hostname
-      if (host === "localhost" || host === "127.0.0.1") base = "http://localhost:5000"
-    }
-
+    const base = API_CONFIG.getBaseURL()
     const sseUrl = base ? `${base}/api/prices/stream` : "/api/prices/stream"
     const currentUrl = base ? `${base}/api/prices/current` : "/api/prices/current"
 
@@ -41,9 +40,10 @@ export default function PriceProvider({ children }: { children: React.ReactNode 
       }
       es.onerror = (ev) => {
         console.warn("[price-provider] SSE error, fallback to polling", ev)
-        try { es?.close() } catch (_) {}
+        try {
+          es?.close()
+        } catch (_) {}
         es = null
-        // start polling if SSE dies
         const fetchNow = async () => {
           try {
             const res = await fetch(currentUrl)
@@ -51,13 +51,14 @@ export default function PriceProvider({ children }: { children: React.ReactNode 
               const data = await res.json()
               setPrices(data)
             }
-          } catch (e) { /* ignore */ }
+          } catch (e) {
+            /* ignore */
+          }
         }
         fetchNow()
         pollInterval = setInterval(fetchNow, 5000)
       }
     } else {
-      // fallback polling when SSE couldn't be opened
       const fetchNow = async () => {
         try {
           const res = await fetch(currentUrl)
@@ -65,14 +66,18 @@ export default function PriceProvider({ children }: { children: React.ReactNode 
             const data = await res.json()
             setPrices(data)
           }
-        } catch (e) { /* ignore */ }
+        } catch (e) {
+          /* ignore */
+        }
       }
       fetchNow()
       pollInterval = setInterval(fetchNow, 5000)
     }
 
     return () => {
-      try { es?.close() } catch (_) {}
+      try {
+        es?.close()
+      } catch (_) {}
       if (pollInterval) clearInterval(pollInterval)
     }
   }, [])

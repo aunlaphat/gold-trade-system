@@ -3,12 +3,12 @@
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/card"
 import { Badge } from "@/app/components/ui/badge"
-import { Button } from "@/app/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/app/components/ui/dialog"
-import { TrendingUp, TrendingDown, Info, ChevronRight } from "lucide-react"
+import { TrendingUp, TrendingDown, Info, ChevronRight, ShoppingCart } from "lucide-react"
 import { useEffect } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/components/ui/tabs"
 import { MiniGoldChart } from "./MiniGoldChart"
+import { TradePanel } from "./TradePanel"
 
 interface PriceCardProps {
   goldType: string
@@ -21,7 +21,10 @@ interface PriceCardProps {
   previousPrice?: number
   displayCurrency: "THB" | "USD"
   exchangeRates: { USD: number } | null
-  errorMessage?: string // New prop for displaying errors
+  errorMessage?: string
+  wallet?: any
+  onTradeComplete?: () => void
+  tradable?: boolean
 }
 
 export function PriceCard({
@@ -35,11 +38,15 @@ export function PriceCard({
   previousPrice,
   displayCurrency,
   exchangeRates,
-  errorMessage, // Destructure new prop
+  errorMessage,
+  wallet,
+  onTradeComplete,
+  tradable = false,
 }: PriceCardProps) {
   const [priceDirection, setPriceDirection] = useState<"up" | "down" | "neutral">("neutral")
   const [isAnimating, setIsAnimating] = useState(false)
   const [detailsOpen, setDetailsOpen] = useState(false)
+  const [resolution, setResolution] = useState<"1m" | "5m" | "30m" | "1h" | "1d" | "1w">("1h")
 
   const convertPrice = (value: number | null | undefined, fromCurrency: "THB" | "USD") => {
     if (value == null || !Number.isFinite(value) || !exchangeRates) return null
@@ -148,7 +155,10 @@ export function PriceCard({
               {title}
               <ChevronRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </CardTitle>
-            <Badge className={`${getStatusColor()} text-white`}>{status}</Badge>
+            <div className="flex items-center gap-2">
+              {tradable && <ShoppingCart className="h-4 w-4 text-primary" />}
+              <Badge className={`${getStatusColor()} text-white`}>{status}</Badge>
+            </div>
           </div>
         </CardHeader>
         <CardContent className="space-y-3">
@@ -188,7 +198,6 @@ export function PriceCard({
             <span className="text-primary font-medium">{displayCurrency}</span>
           </div>
 
-          {/* Mini chart preview */}
           <div className="h-16 mt-2 opacity-60 group-hover:opacity-100 transition-opacity">
             <MiniGoldChart goldType={goldType} />
           </div>
@@ -205,9 +214,10 @@ export function PriceCard({
           </DialogHeader>
 
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-2">
+            <TabsList className={`grid w-full ${tradable ? "grid-cols-3" : "grid-cols-2"}`}>
               <TabsTrigger value="overview">ภาพรวม</TabsTrigger>
               <TabsTrigger value="chart">กราฟ</TabsTrigger>
+              {tradable && <TabsTrigger value="trade">ซื้อ-ขาย</TabsTrigger>}
             </TabsList>
 
             <TabsContent value="overview" className="space-y-6">
@@ -269,17 +279,45 @@ export function PriceCard({
             </TabsContent>
 
             <TabsContent value="chart" className="space-y-4">
+              <div className="flex gap-1 p-1 bg-muted rounded-lg w-fit">
+                {(["1m", "5m", "30m", "1h", "1d", "1w"] as const).map((r) => (
+                  <button
+                    key={r}
+                    onClick={() => setResolution(r)}
+                    className={`px-3 py-1.5 text-xs font-medium rounded transition-all
+                      ${resolution === r ? "bg-primary text-primary-foreground shadow-sm" : "hover:bg-background text-muted-foreground"}`}
+                  >
+                    {r}
+                  </button>
+                ))}
+              </div>
+
               <div className="h-[400px]">
-                <MiniGoldChart goldType={goldType} fullSize />
+                <MiniGoldChart goldType={goldType} fullSize resolution={resolution} />
               </div>
             </TabsContent>
-          </Tabs>
 
-          <div className="flex justify-end gap-3 mt-4">
-            <Button variant="outline" onClick={() => setDetailsOpen(false)}>
-              ปิด
-            </Button>
-          </div>
+            {tradable && wallet && onTradeComplete && (
+              <TabsContent value="trade" className="space-y-4">
+                <TradePanel
+                  goldType={goldType}
+                  title={`เทรด ${title}`}
+                  buyPrice={buyIn ?? 0}
+                  sellPrice={sellOut ?? 0}
+                  onTradeComplete={() => {
+                    onTradeComplete()
+                    setDetailsOpen(false)
+                  }}
+                  thbBalance={wallet.balance?.THB ?? 0}
+                  usdBalance={wallet.balance?.USD ?? 0}
+                  goldHoldings={wallet.goldHoldings || {}}
+                  displayCurrency={displayCurrency}
+                  exchangeRates={exchangeRates}
+                  status={status}
+                />
+              </TabsContent>
+            )}
+          </Tabs>
         </DialogContent>
       </Dialog>
     </>

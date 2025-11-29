@@ -106,7 +106,7 @@ async function startServer() {
     await goldStatusService.initializeStatuses() // Initialize the new status service
 
     // Start price updates
-    goldPriceService.startPriceUpdates(10 * 60 * 1000)
+    goldPriceService.startPriceUpdates(60 * 1000)
 
     // Start exchange rate updates
     exchangeRateService.startUpdates()

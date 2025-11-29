@@ -53,14 +53,19 @@ router.get("/", authMiddleware, async (req, res) => {
 
 router.post("/deposit", authMiddleware, async (req, res) => {
   try {
-    const { amount } = req.body
+    const { amount, currency } = req.body
     const { ObjectId } = await import("mongodb")
     const userId = new ObjectId(req.userId)
-    console.log(`[Wallet] User ${userId} attempting to deposit ${amount} THB.`)
+    console.log(`[Wallet] User ${userId} attempting to deposit ${amount} ${currency || "THB"}.`)
 
     if (!amount || amount <= 0) {
       console.warn(`[Wallet] Invalid deposit amount for user ${userId}: ${amount}.`)
       return res.status(400).json({ error: "Deposit Error", details: "Invalid amount" })
+    }
+
+    if (!currency) {
+      console.warn(`[Wallet] Missing currency for deposit for user ${userId}.`)
+      return res.status(400).json({ error: "Deposit Error", details: "Currency is required" })
     }
 
     const wallet = await getDatabase()
@@ -72,21 +77,25 @@ router.post("/deposit", authMiddleware, async (req, res) => {
       return res.status(404).json({ error: "Deposit Error", details: "Wallet not found" })
     }
 
-    const updateOp = typeof wallet.balance === "number"
-      ? {
-          $set: {
-            balance: { THB: (wallet.balance || 0) + amount, USD: wallet.balance?.USD || 0 },
-            updatedAt: new Date(),
-          },
-        }
-      : {
-          $inc: { "balance.THB": amount },
-          $set: { updatedAt: new Date() },
-        }
+    let updateField
+    if (["THB", "USD"].includes(currency)) {
+      updateField = `balance.${currency}`
+    } else if (["SPOT", "GOLD_9999", "GOLD_965", "GOLD_9999_MTS", "GOLD_965_MTS", "GOLD_965_ASSO"].includes(currency)) {
+      updateField = `goldHoldings.${currency}`
+    } else {
+      console.warn(`[Wallet] Invalid currency type for deposit for user ${userId}: ${currency}.`)
+      return res.status(400).json({ error: "Deposit Error", details: "Invalid currency type" })
+    }
 
     const updateResult = await getDatabase()
       .collection("wallets")
-      .updateOne({ userId }, updateOp)
+      .updateOne(
+        { userId },
+        {
+          $inc: { [updateField]: amount },
+          $set: { updatedAt: new Date() },
+        },
+      )
 
     if (updateResult.modifiedCount === 0) {
       console.error(`[Wallet] Deposit update failed for user ${userId}. Document not modified.`)
@@ -99,7 +108,7 @@ router.post("/deposit", authMiddleware, async (req, res) => {
       return res.status(500).json({ error: "Deposit Failed", details: "Could not retrieve updated wallet." })
     }
 
-    console.log(`[Wallet] Deposit successful for user ${userId}. New THB balance: ${updatedWallet.balance.THB}.`)
+    console.log(`[Wallet] Deposit successful for user ${userId}. New ${currency} balance: ${updatedWallet.balance?.[currency] || updatedWallet.goldHoldings?.[currency]}.`)
     res.json(updatedWallet)
   } catch (error) {
     console.error(`[Wallet] Deposit error for user ${req.userId}:`, error.message, error.stack)

@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || ""
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"
 
 class ApiClient {
   private token: string | null = null
@@ -45,7 +45,6 @@ class ApiClient {
       try {
         if (contentType.includes("application/json")) {
           const errBody = await response.json()
-          // Prioritize 'error' and 'details' fields from our standardized backend errors
           errorMsg = errBody?.error || errBody?.message || JSON.stringify(errBody)
           const errorDetails = errBody?.details || errorMsg
           const customError = new Error(errorMsg) as any
@@ -60,7 +59,6 @@ class ApiClient {
           throw new Error(errorMsg || `HTTP ${response.status}`)
         }
       } catch (e) {
-        // If parsing JSON or text fails, or if customError is thrown, re-throw it
         if (e instanceof Error && (e as any).details) {
           throw e
         }
@@ -95,17 +93,17 @@ class ApiClient {
     return this.request("/api/wallet")
   }
 
-  async deposit(amount: number) {
+  async deposit(amount: number, currency = "THB") {
     return this.request("/api/wallet/deposit", {
       method: "POST",
-      body: JSON.stringify({ amount }),
+      body: JSON.stringify({ amount, currency }),
     })
   }
 
-  async withdraw(amount: number) {
+  async withdraw(amount: number, currency = "THB") {
     return this.request("/api/wallet/withdraw", {
       method: "POST",
-      body: JSON.stringify({ amount }),
+      body: JSON.stringify({ amount, currency }),
     })
   }
 

@@ -12,9 +12,10 @@ import { LogOut, Search } from "lucide-react"
 import { Input } from "@/app/components/ui/input"
 import GoldChartsSix from "@/app/components/GoldChartsSix"
 import { connectWebSocket, disconnectWebSocket, getSocket } from "@/app/lib/websocket" // Import WebSocket functions
+import { Navbar } from "@/app/components/layout/Navbar" // Import Navbar
 
 export function AdminPage() {
-  const { user, logout } = useAuth()
+  const { user } = useAuth() // Removed logout as it's handled by Navbar
   const { toast } = useToast()
   const [wallet, setWallet] = useState<any>(null)
   const [statuses, setStatuses] = useState<any[]>([])
@@ -127,10 +128,10 @@ export function AdminPage() {
   const allGoldTypes = [
     { type: "SPOT",          title: "Gold Spot (Global)",              category: "reference", unit: "USD/oz" },
     { type: "GOLD_9999",     title: "Gold 99.99% (Global)",   category: "reference", unit: "THB/g" },
-    { type: "GOLD_965",      title: "Gold 96.5% (Global)",    category: "reference", unit: "THB/baht" },
+    { type: "GOLD_965",      title: "Gold 96.5% (Global)",    category: "reference", unit: "THB/g" },
     { type: "GOLD_9999_MTS", title: "Gold 99.99% (MTS)",      category: "tradable",  unit: "THB/g" },
-    { type: "GOLD_965_MTS",  title: "Gold 96.5% (MTS)",       category: "tradable",  unit: "THB/baht" },
-    { type: "GOLD_965_ASSO", title: "Gold 96.5% (สมาคม)",     category: "tradable",  unit: "THB/baht" },
+    { type: "GOLD_965_MTS",  title: "Gold 96.5% (MTS)",       category: "tradable",  unit: "THB/g" },
+    { type: "GOLD_965_ASSO", title: "Gold 96.5% (สมาคม)",     category: "tradable",  unit: "THB/g" },
   ]
 
   const getStatus = (goldType: string) => {
@@ -216,16 +217,11 @@ export function AdminPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b bg-card">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold">Admin Control Panel</h1>
-          <Button onClick={logout} variant="outline" size="sm">
-            <LogOut className="h-4 w-4 mr-2" />
-            Logout
-          </Button>
-        </div>
-      </header>
+      <Navbar
+        displayCurrency={"THB"} // Admin page doesn't need currency selection, default to THB
+        setDisplayCurrency={() => {}} // No-op for admin page
+        isAdmin={true}
+      />
 
       <main className="container mx-auto px-4 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -298,7 +294,7 @@ export function AdminPage() {
             )}
 
             {/* Charts รวม 6 ตัว */}
-            <div className="grid grid-cols-1 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 gap-4 sm:gap-6 [&_*]:text-[12px]">
               <GoldChartsSix getStatus={getStatus} />
             </div>
           </div>

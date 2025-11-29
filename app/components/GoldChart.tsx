@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import "chartjs-adapter-date-fns"
+import { API_CONFIG } from "../lib/config"
 
 type ResolutionKey = "1m" | "5m" | "30m" | "1h" | "1d" | "1w"
 const RES_SECONDS: Record<ResolutionKey, number> = {
@@ -111,12 +112,7 @@ export function GoldChart({ goldType, title, status = "ONLINE" }: GoldChartProps
   const [mode, setMode] = useState<"candles" | "line">("candles")
   const [loading, setLoading] = useState(false)
 
-  const envBase = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "")
-  let apiBase = envBase
-  if (!apiBase && typeof window !== "undefined") {
-    const host = window.location.hostname
-    if (host === "localhost" || host === "127.0.0.1") apiBase = "http://localhost:5000"
-  }
+  const apiBase = API_CONFIG.getBaseURL()
 
   const seriesPath = (() => {
     const map: Record<string, string> = {

@@ -5,7 +5,6 @@ import { LoginForm } from "@/app/components/auth/LoginForm"
 import { RegisterForm } from "@/app/components/auth/RegisterForm"
 import { Button } from "@/app/components/ui/button"
 import { Coins, Sparkles, Shield, TrendingUp } from "lucide-react"
-import Image from "next/image"
 
 export default function LoginPage() {
   const [showRegister, setShowRegister] = useState(false)
@@ -24,15 +23,21 @@ export default function LoginPage() {
         <div className="hidden md:block space-y-8 animate-fade-in-left">
           <div className="space-y-4">
             <div className="flex items-center gap-3 mb-6">
-              <div className="relative w-16 h-16 overflow-hidden rounded-xl shadow-2xl shadow-amber-500/20 animate-float">
-                <Image
-                  src="/logo-system.jpg"
-                  alt="Gold Trading Logo"
-                  fill
-                  className="object-cover"
-                  sizes="64px"
-                  priority
-                />
+              <div className="relative w-16 h-16 flex items-center justify-center overflow-hidden rounded-xl shadow-2xl shadow-amber-500/20 animate-float bg-gradient-to-br from-amber-400 to-yellow-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M6 3h12l4 6-10 13L2 9l4-6z" />
+                  <path d="M11 3 8 9l4 13 4-13-3-6z" />
+                </svg>
               </div>
               <div>
                 <h1 className="text-4xl font-bold bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
@@ -112,16 +117,22 @@ export default function LoginPage() {
             <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 rounded-2xl blur-xl"></div>
 
             <div className="relative bg-slate-900/80 backdrop-blur-xl border border-amber-500/20 rounded-2xl p-8 shadow-2xl">
-              {/* Mobile logo */}
               <div className="md:hidden flex items-center justify-center gap-3 mb-8">
-                <div className="relative w-12 h-12 overflow-hidden rounded-lg bg-gradient-to-br from-amber-500 to-yellow-600 p-2 shadow-lg shadow-amber-500/20">
-                  <Image
-                    src="/logo-system.jpg"
-                    alt="Gold Trading Logo"
-                    width={48}
-                    height={48}
-                    className="object-contain"
-                  />
+                <div className="relative w-12 h-12 flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-amber-500 to-yellow-600 p-2 shadow-lg shadow-amber-500/20">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M6 3h12l4 6-10 13L2 9l4-6z" />
+                    <path d="M11 3 8 9l4 13 4-13-3-6z" />
+                  </svg>
                 </div>
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">
                   Gold Trading
@@ -133,7 +144,7 @@ export default function LoginPage() {
                 <p className="text-sm text-slate-400">{showRegister ? "เริ่มต้นการเทรดทองคำวันนี้" : "ยินดีต้อนรับกลับสู่ระบบ"}</p>
               </div>
 
-             {showRegister ? (
+              {showRegister ? (
                 <>
                   <RegisterForm onRegisterSuccess={() => setShowRegister(false)} />
                   <div className="mt-6 text-center">

@@ -1,7 +1,8 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/card"
-import { Coins, TrendingUp, TrendingDown } from "lucide-react"
+import { Coins, TrendingUp, TrendingDown, Loader2 } from "lucide-react"
+import { useMemo, useRef, useEffect } from "react"
 
 interface GoldHoldingsCardProps {
   goldHoldings: {
@@ -24,6 +25,23 @@ export function GoldHoldingsCard({
   exchangeRates,
   averageCosts,
 }: GoldHoldingsCardProps) {
+  const lastValidPricesRef = useRef<any>(null)
+
+  useEffect(() => {
+    if (currentMarketPrices && typeof currentMarketPrices === "object") {
+      lastValidPricesRef.current = currentMarketPrices
+    }
+  }, [currentMarketPrices])
+
+  // Use cached prices if current prices are not available
+  const effectivePrices = currentMarketPrices || lastValidPricesRef.current
+
+  const tradableGoldTypes = [
+    { type: "GOLD_9999_MTS", unit: "g", title: "ทองคำ 99.99% (MTS)" },
+    { type: "GOLD_965_MTS", unit: "g", title: "ทองคำ 96.5% (MTS)" },
+    { type: "GOLD_965_ASSO", unit: "g", title: "ทองคำ 96.5% (สมาคม)" },
+  ]
+
   const getPriceKey = (goldType: string) => {
     const keyMap: Record<string, string> = {
       SPOT: "spot",
@@ -36,85 +54,150 @@ export function GoldHoldingsCard({
     return keyMap[goldType] || goldType.toLowerCase()
   }
 
-  const getCurrentSellPrice = (goldType: string): number | null => {
-    if (!currentMarketPrices) return null
-    const priceKey = getPriceKey(goldType)
-    const priceData = currentMarketPrices[priceKey]
-    if (!priceData) return null
-    return priceData.sellOut ?? priceData.price ?? null
+  const resolveKeys = (goldType: string): string[] => {
+    const base = getPriceKey(goldType)
+    const variants = new Set<string>([
+      goldType,
+      goldType.toUpperCase(),
+      goldType.toLowerCase(),
+      base,
+      base.toUpperCase(),
+      base.toLowerCase(),
+    ])
+    return Array.from(variants)
   }
 
-  const getGoldBaseCurrency = (goldType: string): "THB" | "USD" => {
-    return goldType === "SPOT" ? "USD" : "THB"
+  const getHolding = (goldType: string): number => {
+    for (const k of resolveKeys(goldType)) {
+      const v = goldHoldings[k]
+      if (typeof v === "number" && !Number.isNaN(v)) return v
+    }
+    return 0
   }
+
+  const getAverageCost = (goldType: string): number | undefined => {
+    for (const k of resolveKeys(goldType)) {
+      const v = averageCosts?.[k]
+      if (typeof v === "number" && !Number.isNaN(v)) return v
+    }
+    return undefined
+  }
+
+  const getGoldBaseCurrency = (goldType: string): "THB" | "USD" => (goldType === "SPOT" ? "USD" : "THB")
 
   const convertToTHB = (value: number, fromCurrency: "THB" | "USD"): number | null => {
     if (fromCurrency === "THB") return value
-    if (!exchangeRates) return null
+    if (!exchangeRates || !exchangeRates.USD) return null
     return value * exchangeRates.USD
   }
 
   const convertToUSD = (value: number, fromCurrency: "THB" | "USD"): number | null => {
     if (fromCurrency === "USD") return value
-    if (!exchangeRates) return null
+    if (!exchangeRates || !exchangeRates.USD) return null
     return value / exchangeRates.USD
   }
 
-  const getGoldValue = (goldType: string, amount: number): { thbValue: number | null; usdValue: number | null } => {
-    if (!currentMarketPrices || amount === 0) {
-      return { thbValue: 0, usdValue: 0 }
+  const getCurrentSellPrice = useMemo(() => {
+    return (goldType: string): number | null => {
+      if (!effectivePrices || typeof effectivePrices !== "object") {
+        return null
+      }
+
+      for (const key of resolveKeys(goldType)) {
+        const priceData = (effectivePrices as any)[key]
+        if (!priceData) continue
+
+        const price = priceData.sellOut ?? priceData.buyIn ?? priceData.price
+
+        if (typeof price === "number" && Number.isFinite(price) && price > 0) {
+          return price
+        }
+      }
+
+      return null
+    }
+  }, [effectivePrices])
+
+  const goldValuesAndPnL = useMemo(() => {
+    const results: Record<
+      string,
+      {
+        holding: number
+        thbValue: number | null
+        usdValue: number | null
+        pnlThb: number | null
+        pnlUsd: number | null
+        pnlPercent: number | null
+        hasAverage: boolean
+        avgCost: number | undefined
+      }
+    > = {}
+
+    for (const gold of tradableGoldTypes) {
+      const holding = getHolding(gold.type)
+
+      if (holding <= 0) {
+        results[gold.type] = {
+          holding: 0,
+          thbValue: 0,
+          usdValue: 0,
+          pnlThb: 0,
+          pnlUsd: 0,
+          pnlPercent: 0,
+          hasAverage: false,
+          avgCost: undefined,
+        }
+        continue
+      }
+
+      const currentSellPrice = getCurrentSellPrice(gold.type)
+      const avgCost = getAverageCost(gold.type)
+      const baseCurrency = getGoldBaseCurrency(gold.type)
+
+      // Calculate value
+      let thbValue: number | null = null
+      let usdValue: number | null = null
+
+      if (currentSellPrice != null) {
+        const valueInBase = holding * currentSellPrice
+        thbValue = baseCurrency === "THB" ? valueInBase : convertToTHB(valueInBase, "USD")
+        usdValue = baseCurrency === "USD" ? valueInBase : convertToUSD(valueInBase, "THB")
+      }
+
+      // Calculate PnL
+      let pnlThb: number | null = null
+      let pnlUsd: number | null = null
+      let pnlPercent: number | null = null
+      let hasAverage = false
+
+      if (avgCost != null && avgCost > 0 && currentSellPrice != null) {
+        hasAverage = true
+        const pnlInBase = (currentSellPrice - avgCost) * holding
+        pnlPercent = ((currentSellPrice - avgCost) / avgCost) * 100
+        pnlThb = convertToTHB(pnlInBase, baseCurrency)
+        pnlUsd = convertToUSD(pnlInBase, baseCurrency)
+      } else if (avgCost != null && avgCost > 0) {
+        hasAverage = true
+      }
+
+      results[gold.type] = {
+        holding,
+        thbValue,
+        usdValue,
+        pnlThb,
+        pnlUsd,
+        pnlPercent,
+        hasAverage,
+        avgCost,
+      }
     }
 
-    const currentSellPrice = getCurrentSellPrice(goldType)
-    if (currentSellPrice == null) {
-      return { thbValue: 0, usdValue: 0 }
-    }
+    return results
+  }, [goldHoldings, effectivePrices, averageCosts, exchangeRates])
 
-    const baseCurrency = getGoldBaseCurrency(goldType)
-    const valueInBase = amount * currentSellPrice
+  const hasAnyHoldings = tradableGoldTypes.some((gold) => goldValuesAndPnL[gold.type]?.holding > 0)
 
-    const thbValue = baseCurrency === "THB" ? valueInBase : convertToTHB(valueInBase, "USD")
-
-    const usdValue = baseCurrency === "USD" ? valueInBase : convertToUSD(valueInBase, "THB")
-
-    return { thbValue, usdValue }
-  }
-
-  const calculatePnL = (
-    goldType: string,
-    holding: number,
-  ): { pnlThb: number | null; pnlUsd: number | null; pnlPercent: number | null; hasAverage: boolean } => {
-    if (holding === 0 || !currentMarketPrices) {
-      return { pnlThb: 0, pnlUsd: 0, pnlPercent: 0, hasAverage: false }
-    }
-
-    const avgCost = averageCosts?.[goldType]
-    const currentSellPrice = getCurrentSellPrice(goldType)
-
-    if (avgCost == null || avgCost === 0 || currentSellPrice == null) {
-      return { pnlThb: null, pnlUsd: null, pnlPercent: null, hasAverage: false }
-    }
-
-    const baseCurrency = getGoldBaseCurrency(goldType)
-    const avgCostInBase = avgCost
-    const currentPriceInBase = currentSellPrice
-
-    const pnlInBase = (currentPriceInBase - avgCostInBase) * holding
-    const pnlPercent = ((currentPriceInBase - avgCostInBase) / avgCostInBase) * 100
-
-    const pnlThb = convertToTHB(pnlInBase, baseCurrency)
-    const pnlUsd = convertToUSD(pnlInBase, baseCurrency)
-
-    return { pnlThb, pnlUsd, pnlPercent, hasAverage: true }
-  }
-
-  const tradableGoldTypes = [
-    { type: "GOLD_9999_MTS", unit: "g", title: "ทองคำ 99.99% (MTS)" },
-    { type: "GOLD_965_MTS", unit: "g", title: "ทองคำ 96.5% (MTS)" },
-    { type: "GOLD_965_ASSO", unit: "g", title: "ทองคำ 96.5% (สมาคม)" },
-  ]
-
-  const hasAnyHoldings = tradableGoldTypes.some((gold) => (goldHoldings[gold.type] || 0) > 0)
+  const isPriceLoading = !effectivePrices
 
   return (
     <Card className="border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
@@ -124,6 +207,7 @@ export function GoldHoldingsCard({
             <Coins className="h-6 w-6" />
           </div>
           <span className="text-xl">ทรัพย์สินทอง</span>
+          {isPriceLoading && <Loader2 className="h-4 w-4 animate-spin text-amber-500" />}
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-6">
@@ -136,11 +220,10 @@ export function GoldHoldingsCard({
         ) : (
           <div className="space-y-4">
             {tradableGoldTypes.map((gold) => {
-              const holding = goldHoldings[gold.type] || 0
-              if (holding <= 0) return null
+              const data = goldValuesAndPnL[gold.type]
+              if (!data || data.holding <= 0) return null
 
-              const { thbValue, usdValue } = getGoldValue(gold.type, holding)
-              const { pnlThb, pnlUsd, pnlPercent, hasAverage } = calculatePnL(gold.type, holding)
+              const { holding, thbValue, usdValue, pnlThb, pnlPercent, hasAverage, avgCost } = data
 
               const pnlColorClass =
                 pnlPercent != null && pnlPercent > 0
@@ -148,6 +231,7 @@ export function GoldHoldingsCard({
                   : pnlPercent != null && pnlPercent < 0
                     ? "text-red-600 dark:text-red-400"
                     : "text-gray-500"
+
               const pnlSign = pnlPercent != null && pnlPercent > 0 ? "+" : ""
 
               return (
@@ -165,14 +249,20 @@ export function GoldHoldingsCard({
                     <div className="text-right">
                       <div className="text-sm text-muted-foreground">มูลค่าปัจจุบัน</div>
                       <div className="font-semibold text-foreground">
-                        {thbValue != null
-                          ? `฿${thbValue.toLocaleString("en-US", { minimumFractionDigits: 2 })}`
-                          : "N/A"}
+                        {isPriceLoading ? (
+                          <Loader2 className="h-4 w-4 animate-spin inline" />
+                        ) : thbValue != null ? (
+                          `฿${thbValue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+                        ) : (
+                          <span className="text-muted-foreground text-sm">รอข้อมูลราคา</span>
+                        )}
                       </div>
                       <div className="text-xs text-muted-foreground">
-                        {usdValue != null
-                          ? `$${usdValue.toLocaleString("en-US", { minimumFractionDigits: 2 })}`
-                          : "N/A"}
+                        {isPriceLoading
+                          ? "..."
+                          : usdValue != null
+                            ? `$${usdValue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+                            : "รอข้อมูลราคา"}
                       </div>
                     </div>
                   </div>
@@ -181,14 +271,18 @@ export function GoldHoldingsCard({
                     <div>
                       <div className="text-muted-foreground mb-1">ต้นทุนเฉลี่ย/{gold.unit}</div>
                       <div className="font-medium">
-                        {averageCosts?.[gold.type] != null
-                          ? `฿${averageCosts[gold.type]?.toLocaleString("en-US", { minimumFractionDigits: 2 })}`
-                          : "N/A"}
+                        {avgCost != null ? (
+                          `฿${avgCost.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+                        ) : (
+                          <span className="text-muted-foreground text-xs">ไม่มีข้อมูล</span>
+                        )}
                       </div>
                     </div>
                     <div className="text-right">
                       <div className="text-muted-foreground mb-1">กำไร/ขาดทุน</div>
-                      {hasAverage && pnlThb != null && pnlPercent != null ? (
+                      {isPriceLoading ? (
+                        <Loader2 className="h-4 w-4 animate-spin inline" />
+                      ) : hasAverage && pnlThb != null && pnlPercent != null ? (
                         <div className={`font-semibold flex items-center justify-end gap-1 ${pnlColorClass}`}>
                           {pnlPercent > 0 ? (
                             <TrendingUp className="h-4 w-4" />
@@ -196,12 +290,18 @@ export function GoldHoldingsCard({
                             <TrendingDown className="h-4 w-4" />
                           ) : null}
                           <span>
-                            {pnlSign}฿{Math.abs(pnlThb).toLocaleString("en-US", { minimumFractionDigits: 2 })}
+                            {pnlSign}฿
+                            {Math.abs(pnlThb).toLocaleString("en-US", {
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2,
+                            })}
                             {` (${pnlSign}${pnlPercent.toFixed(2)}%)`}
                           </span>
                         </div>
+                      ) : hasAverage ? (
+                        <span className="text-muted-foreground text-xs">รอข้อมูลราคา</span>
                       ) : (
-                        <span className="text-muted-foreground">ไม่มีข้อมูล</span>
+                        <span className="text-muted-foreground text-xs">ไม่มีข้อมูลต้นทุน</span>
                       )}
                     </div>
                   </div>

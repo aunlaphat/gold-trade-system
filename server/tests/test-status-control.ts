@@ -15,6 +15,7 @@ async function getAdminToken(): Promise<string | null> {
         email: `admin${timestamp}@test.com`,
         username: `admin${timestamp}`,
         password: "admin123456",
+        role: "admin",
       }),
     })
 
@@ -26,20 +27,31 @@ async function getAdminToken(): Promise<string | null> {
   }
 }
 
-async function testStatusChange(goldType: string, status: "ONLINE" | "PAUSE" | "STOP"): Promise<boolean> {
+async function testStatusChange(
+  goldType: string,
+  status: "ONLINE" | "PAUSE" | "STOP",
+  adminToken: string,
+): Promise<boolean> {
   try {
-    const response = await fetch(`${API_URL}/api/status/${goldType}`, {
+    const response = await fetch(`${API_URL}/api/admin/status/${goldType}`, {
       method: "PUT",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${adminToken}`,
+      },
       body: JSON.stringify({ status }),
     })
 
     if (!response.ok) {
+      console.error(`Status change failed: ${response.status} ${response.statusText}`)
       return false
     }
 
-    // Verify status was set
-    const statusResponse = await fetch(`${API_URL}/api/status`)
+    const statusResponse = await fetch(`${API_URL}/api/admin/status`, {
+      headers: {
+        Authorization: `Bearer ${adminToken}`,
+      },
+    })
     const statuses = await statusResponse.json()
     const goldStatus = statuses.find((s: any) => s.goldType === goldType)
 
@@ -52,19 +64,35 @@ async function testStatusChange(goldType: string, status: "ONLINE" | "PAUSE" | "
 
 async function verifyPriceOnStop(goldType: string): Promise<boolean> {
   try {
-    // Wait a bit for price update
+    // รอให้ service อัปเดตราคาหลังเปลี่ยน status
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
     const response = await fetch(`${API_URL}/api/prices/current`)
     const prices = await response.json()
-    const price = prices.find((p: any) => p.goldType === goldType)
 
-    // Check if price is 0 when stopped
-    if (price.buyIn !== undefined) {
-      return price.buyIn === 0 && price.sellOut === 0
-    } else {
-      return price.price === 0
+    // map goldType → key ใน JSON ของ /api/prices/current
+    const keyMap: Record<string, string> = {
+      SPOT: "spot",
+      GOLD_9999: "gold9999",
+      GOLD_965: "gold965",
+      GOLD_9999_MTS: "gold9999_mts",
+      GOLD_965_MTS: "gold965_mts",
+      GOLD_965_ASSO: "gold965_asso",
     }
+
+    const key = keyMap[goldType] ?? goldType.toLowerCase()
+    const price = prices[key]
+
+    if (!price) {
+      console.warn(`[TC-003] Price data not found for key='${key}' (goldType=${goldType}).`)
+      return false
+    }
+
+    const buyIn = price.buyIn ?? price.price
+    const sellOut = price.sellOut ?? price.price
+    const p = price.price ?? buyIn ?? sellOut
+
+    return buyIn === 0 && sellOut === 0 && p === 0
   } catch (error) {
     console.error(`Failed to verify price for ${goldType}:`, error)
     return false
@@ -74,7 +102,17 @@ async function verifyPriceOnStop(goldType: string): Promise<boolean> {
 async function runStatusControlTest() {
   console.log("\nTC-003: Starting Price Status Control Test...\n")
 
-  const goldTypes = ["SPOT", "GOLD_9999", "GOLD_965"]
+  console.log("Creating admin user...")
+  const adminToken = await getAdminToken()
+
+  if (!adminToken) {
+    console.error("❌ Failed to create admin user")
+    return { passed: false, successRate: 0, results: [] }
+  }
+
+  console.log("✅ Admin user created\n")
+
+  const goldTypes = ["SPOT", "GOLD_9999", "GOLD_965"] as const
   const statuses: ("ONLINE" | "PAUSE" | "STOP")[] = ["ONLINE", "PAUSE", "STOP"]
 
   let totalTests = 0
@@ -88,10 +126,9 @@ async function runStatusControlTest() {
       totalTests++
       console.log(`  Setting status to ${status}...`)
 
-      const success = await testStatusChange(goldType, status)
+      const success = await testStatusChange(goldType, status, adminToken)
 
       if (success) {
-        // If STOP, verify price is 0
         if (status === "STOP") {
           const priceIsZero = await verifyPriceOnStop(goldType)
           if (priceIsZero) {
@@ -112,12 +149,10 @@ async function runStatusControlTest() {
         results.push({ goldType, status, passed: false })
       }
 
-      // Small delay between tests
       await new Promise((resolve) => setTimeout(resolve, 500))
     }
 
-    // Reset to ONLINE after testing
-    await testStatusChange(goldType, "ONLINE")
+    await testStatusChange(goldType, "ONLINE", adminToken)
   }
 
   console.log("\n" + "=".repeat(60))
@@ -137,7 +172,6 @@ async function runStatusControlTest() {
   }
 }
 
-// Run test if executed directly
 if (process.argv[1].endsWith("test-status-control.ts")) {
   runStatusControlTest()
     .then(() => process.exit(0))

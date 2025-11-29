@@ -9,14 +9,18 @@ export class User {
   static async create(userData) {
     const { email, username, password, role = "user" } = userData
 
+    console.log("Creating user, hashing password...")
+
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 10)
+
+    console.log("Password hashed successfully, hash length:", hashedPassword.length)
 
     const user = {
       email,
       username,
       password: hashedPassword,
-      role, // Add role field
+      role,
       createdAt: new Date(),
       updatedAt: new Date(),
       isActive: true,
@@ -33,6 +37,14 @@ export class User {
         USD: 0,
       },
       goldHoldings: {
+        SPOT: 0,
+        GOLD_9999: 0,
+        GOLD_965: 0,
+        GOLD_9999_MTS: 0,
+        GOLD_965_MTS: 0,
+        GOLD_965_ASSO: 0,
+      },
+      averageCosts: {
         SPOT: 0,
         GOLD_9999: 0,
         GOLD_965: 0,
@@ -61,6 +73,22 @@ export class User {
   }
 
   static async verifyPassword(plainPassword, hashedPassword) {
-    return await bcrypt.compare(plainPassword, hashedPassword)
+    console.log("Verifying password...")
+    console.log("Plain password provided:", !!plainPassword, "Length:", plainPassword?.length)
+    console.log("Hashed password provided:", !!hashedPassword, "Length:", hashedPassword?.length)
+
+    if (!plainPassword || !hashedPassword) {
+      console.log("Password verification failed: Missing password or hash")
+      return false
+    }
+
+    try {
+      const result = await bcrypt.compare(plainPassword, hashedPassword)
+      console.log("bcrypt.compare result:", result)
+      return result
+    } catch (error) {
+      console.error("Password verification error:", error)
+      return false
+    }
   }
 }
