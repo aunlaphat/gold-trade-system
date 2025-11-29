@@ -27,7 +27,8 @@ npm run setup-db
 6. Choose the corresponding JSON file from the data/ folder
 7. Importing the test data is optional.
 - You may skip this step if you prefer to start with an empty database.
-🔑 Test Accounts (จาก data folder):
+
+- 🔑 Test Accounts (จาก data folder):
 - login role admin ` email: admin@example.com ` ` pass: adminpassword `
 - login role user ` email: 123@hotmail.com ` ` pass: 123456 `
 
