@@ -8,8 +8,8 @@
 - cd gold-trading-system
 
 # Install dependencies
-npm install
-npm install -D tsx
+- npm install
+- npm install -D tsx
 
 # Setup environment variables 
 This project includes a default .env file for development and testing.
