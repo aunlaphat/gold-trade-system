@@ -32,69 +32,6 @@
 - **JWT** (Authentication)
 - **Bcrypt** (Password Hashing)
 
-## ⚙️ การติดตั้ง
-
-### ข้อกำหนดเบื้องต้น
-- Node.js >= 18.x
-- MongoDB >= 5.0
-- npm หรือ pnpm
-
-### 1. Clone Repository
-git clone <repository-url>
-cd gold-trading-system
-
-### 2. ติดตั้ง Dependencies
-npm install
-
-### 3. ติดตั้งและเริ่มต้น MongoDB
-
-**บน macOS (Homebrew):**
-brew tap mongodb/brew
-brew install mongodb-community
-brew services start mongodb-community
-
-**บน Ubuntu/Linux:**
-sudo apt-get install -y mongodb-org
-sudo systemctl start mongod
-sudo systemctl enable mongod
-
-**บน Windows:**
-ดาวน์โหลดและติดตั้งจาก [MongoDB Official](https://www.mongodb.com/try/download/community)
-
-### 4. ตั้งค่า Environment Variables
-สร้างไฟล์/แก้ไข `.env` ในโฟลเดอร์ root:
-
-# MongoDB
-MONGODB_URI=mongodb://localhost:27017
-
-# JWT Secret
-JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
-
-# API URL
-NEXT_PUBLIC_API_URL=http://localhost:5000
-
-# Server Port
-PORT=5000
-
-### 5. Setup Database และสร้าง Admin User
-
-# Setup database และ collections
-node server/scripts/mongodb-setup.js
-
-# สร้าง admin user (email: admin@example.com, password: admin123)
-node server/scripts/create-admin.js
-
-### 6. เริ่มต้น Development Server
-
-**Terminal 1 - Backend Server:**
-cd server
-node server.js
-
-**Terminal 2 - Frontend (Next.js):**
-npm run dev
-
-เปิดเบราว์เซอร์ที่ [http://localhost:3000](http://localhost:3000)
-
 ## 📖 การใช้งาน
 
 ### สำหรับ User
@@ -142,21 +79,6 @@ npm run dev
 4. **ดูกราฟ**
    - เลือก tab ช่วงเวลา: 1m, 5m, 30m, 1h, 1d, 1w
    - กราฟจะแสดงการเปลี่ยนแปลงราคาตามช่วงเวลาที่เลือก
-
-## 🐛 การแก้ไขปัญหาทั่วไป
-### กรณี MongoDB Connection Failed
-
-# วิธีตรวจสอบว่า MongoDB กำลังทำงานที่อื่นอยู่
-# หยุด process ที่ใช้ port 5000
-lsof -ti:5000 | xargs kill -9
-
-# หยุด process ที่ใช้ port 3000
-lsof -ti:3000 | xargs kill -9
-
-### WebSocket Connection Failed
-- ตรวจสอบว่า Backend Server กำลังทำงานอยู่
-- ตรวจสอบ CORS settings ใน server.js
-- ตรวจสอบ firewall settings
 
 ## 📝 หมายเหตุสำคัญ
 
