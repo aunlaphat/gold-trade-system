@@ -340,12 +340,4 @@ npm run test:transactions -- 1000
 
 ---
 
-## เอกสารเพิ่มเติม
-
-- [API Documentation](./API_DOCUMENTATION.md) - รายละเอียด API Endpoints
-- [README.md](../README.md) - คู่มือการติดตั้งระบบ
-- [DEPLOYMENT.md](../DEPLOYMENT.md) - คู่มือการ Deploy
-
----
-
 **หมายเหตุ:** การทดสอบทั้งหมดจะสร้าง test users และข้อมูลทดสอบในฐานข้อมูล หากต้องการล้างข้อมูล ให้รัน `npm run setup-db` ใหม่
